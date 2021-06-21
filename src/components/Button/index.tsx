@@ -9,15 +9,15 @@ import { Container, IconWrapper, DiscordImage, Title } from "./styles";
 import DiscordImg from "../../assets/images/discord.png";
 
 //Types
-type ButtonProps = TouchableOpacityProps & {
+type Props = TouchableOpacityProps & {
   title: string;
 };
 
-export default function Button(props: ButtonProps) {
+export default function Button(props: Props) {
   const { title, ...rest } = props;
 
   return (
-    <Container activeOpacity={0.7}>
+    <Container activeOpacity={0.7} >
       <IconWrapper>
         <DiscordImage source={DiscordImg} resizeMode="contain" />
       </IconWrapper>
