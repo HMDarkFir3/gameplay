@@ -62,6 +62,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [expo-font](https://docs.expo.io/versions/latest/sdk/font/)
 - [expo-google-fonts](https://docs.expo.io/guides/using-custom-fonts/#using-a-google-font)
 - [expo-app-loading](https://docs.expo.io/versions/latest/sdk/app-loading/)
+- [styled-components](https://styled-components.com)
 - [react-native-iphone-x-helper](https://github.com/ptelad/react-native-iphone-x-helper)
 
 ---
