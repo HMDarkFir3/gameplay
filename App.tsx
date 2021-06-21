@@ -1,7 +1,6 @@
 //React
 import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 
 //Expo
 import { StatusBar } from "expo-status-bar";
@@ -15,6 +14,12 @@ import {
   Rajdhani_700Bold,
 } from "@expo-google-fonts/rajdhani";
 
+//Contexts
+import ThemesProvider from "./src/contexts/ThemeContext";
+
+//Screens
+import SignIn from "./src/screens/SignIn";
+
 export default function App() {
   let [fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -27,18 +32,11 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <ThemesProvider>
+        <StatusBar style="light" backgroundColor="#0d133d" />
+        <SignIn />
+      </ThemesProvider>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
