@@ -7,10 +7,10 @@ import light from "../global/styles/themes/light";
 import dark from "../global/styles/themes/dark";
 
 //Interface
-interface ThemeContextData {
+type ThemeContextData = {
   theme: DefaultTheme;
   toggleTheme(): void;
-}
+};
 
 export const ThemeContext = createContext({} as ThemeContextData);
 

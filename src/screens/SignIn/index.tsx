@@ -1,5 +1,12 @@
 //React
-import React from "react";
+import React, { useContext } from "react";
+import { StatusBar } from "react-native";
+
+//Contexts
+import { ThemeContext } from "../../contexts/ThemeContext";
+
+//Components
+import Button from "../../components/Button";
 
 //Styles
 import {
@@ -14,9 +21,16 @@ import {
 import IllustrationImg from "../../assets/images/illustration.png";
 
 export default function SignIn() {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <Container>
-      <IllustrationImage source={IllustrationImg} />
+      <StatusBar
+        barStyle={theme.title === "light" ? "dark-content" : "light-content"}
+        backgroundColor="transparent"
+        translucent={true}
+      />
+      <IllustrationImage source={IllustrationImg} resizeMode="stretch" />
 
       <Content>
         <Title>
@@ -28,6 +42,8 @@ export default function SignIn() {
           Crie grupos para jogar seus games{`\n`}
           favoritos com seus amigos
         </SubTitle>
+
+        <Button title="Entrar com Discord" />
       </Content>
     </Container>
   );

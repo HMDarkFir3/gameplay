@@ -6,16 +6,11 @@ declare module "styled-components" {
 
     colors: {
       background: string;
-      text: string;
-    };
-  }
+      red: string;
+      redLine: string;
 
-  export interface CustomTheme {
-    title: string;
-
-    colors: {
-      background: string;
       text: string;
+      textButton: string;
     };
   }
 }
