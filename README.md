@@ -21,6 +21,7 @@
 ---
 
 ## 📋 Sobre
+
 Um aplicativo de agendamento de partidas de e-sports com seus amigos.
 
 ---
@@ -52,7 +53,7 @@ $ expo start
 ---
 
 ## 🚀 Tecnologias Utilizadas
- 
+
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - [React Native](https://reactnative.dev)
@@ -62,6 +63,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [expo-font](https://docs.expo.io/versions/latest/sdk/font/)
 - [expo-google-fonts](https://docs.expo.io/guides/using-custom-fonts/#using-a-google-font)
 - [expo-app-loading](https://docs.expo.io/versions/latest/sdk/app-loading/)
+- [expo-linear-gradient](https://docs.expo.io/versions/latest/sdk/linear-gradient/)
 - [styled-components](https://styled-components.com)
 - [react-native-iphone-x-helper](https://github.com/ptelad/react-native-iphone-x-helper)
 
@@ -73,7 +75,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
 3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
 4. Envie as suas alterações: `git push origin my-feature`
-> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
+   > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
 ---
 
@@ -82,11 +84,12 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 <img style="border-radius: 50%;" src="https://github.com/HMDarkFir3.png" width="100px;" alt=""/>
  <h4>Henrique Luís Oliveira Marques</h4>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Henrique-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)](https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Henrique-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)](https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)
 
 ---
 
 ## 📝 Licença
-Este projeto esta sobe a licença MIT. Veja a [LICENÇA](./LICENSE) para saber mais. 
+
+Este projeto esta sobe a licença MIT. Veja a [LICENÇA](./LICENSE) para saber mais.
 <br>
 👋🏽 [Entre em contato!](https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)
