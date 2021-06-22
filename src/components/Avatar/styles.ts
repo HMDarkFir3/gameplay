@@ -8,6 +8,8 @@ export const Container = styled.View`
   flex-direction: row;
 `;
 
+export const Content = styled.View``;
+
 export const UserView = styled.View`
   flex-direction: row;
 `;

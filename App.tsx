@@ -20,7 +20,7 @@ import ThemesProvider from "./src/contexts/ThemeContext";
 import Background from "./src/components/Background";
 
 //Screens
-import SignIn from "./src/screens/SignIn";
+import Home from "./src/screens/Home";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -37,7 +37,7 @@ export default function App() {
   return (
     <ThemesProvider>
       <Background>
-        <SignIn />
+        <Home />
       </Background>
     </ThemesProvider>
   );

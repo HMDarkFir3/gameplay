@@ -5,6 +5,9 @@ import { StatusBar } from "react-native";
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
 
+//Components
+import Profile from "../../components/Profile";
+
 //Styles
 import { Container, Header } from "./styles";
 
@@ -18,7 +21,9 @@ export default function Home() {
         backgroundColor="transparent"
         translucent={true}
       />
-      <Header></Header>
+      <Header>
+        <Profile />
+      </Header>
     </Container>
   );
 }

@@ -13,7 +13,7 @@ type Props = TouchableOpacityProps & {
   title: string;
 };
 
-export default function Button(props: Props) {
+export default function DiscordButton(props: Props) {
   const { title } = props;
 
   return (

@@ -1,21 +1,27 @@
 //React
 import React from "react";
-import { View } from "react-native";
 
 //Styles
-import { Container, UserView, Greeting, UserName, Message } from "./styles";
+import {
+  Container,
+  Content,
+  UserView,
+  Greeting,
+  UserName,
+  Message,
+} from "./styles";
 
-export default function Profile() {
+export default function Avatar() {
   return (
     <Container>
-      <View>
+      <Content>
         <UserView>
           <Greeting>Olá,</Greeting>
           <UserName>Henrique</UserName>
         </UserView>
 
         <Message>Hoje é dia de vitória</Message>
-      </View>
+      </Content>
     </Container>
   );
 }

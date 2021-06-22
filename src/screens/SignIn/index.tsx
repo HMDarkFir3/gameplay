@@ -6,7 +6,7 @@ import { StatusBar } from "react-native";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Components
-import Button from "../../components/Button";
+import DiscordButton from "../../components/DiscordButton";
 
 //Styles
 import {
@@ -44,7 +44,7 @@ export default function SignIn() {
           favoritos com seus amigos
         </SubTitle>
 
-        <Button title="Entrar com Discord" />
+        <DiscordButton title="Entrar com Discord" />
       </Content>
     </Container>
   );
