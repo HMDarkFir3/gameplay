@@ -2,14 +2,12 @@
 import styled from "styled-components/native";
 
 //Fonts
-import fonts from "../../global/styles/fonts";
+import fonts from "../../global/fonts";
 
 export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-
-  background-color: ${(props) => props.theme.colors.background};
 `;
 
 export const IllustrationImage = styled.Image`
@@ -27,16 +25,18 @@ export const Title = styled.Text`
   margin-bottom: 16px;
 
   text-align: center;
+  line-height: 40px;
   font-family: ${fonts.RajdhaniBold};
   font-size: 40px;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.heading};
 `;
 
 export const SubTitle = styled.Text`
   margin-bottom: 64px;
 
   text-align: center;
+  line-height: 25px;
   font-family: ${fonts.InterRegular};
   font-size: 15px;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.heading};
 `;

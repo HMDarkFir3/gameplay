@@ -14,10 +14,10 @@ type Props = TouchableOpacityProps & {
 };
 
 export default function Button(props: Props) {
-  const { title, ...rest } = props;
+  const { title } = props;
 
   return (
-    <Container activeOpacity={0.7} >
+    <Container activeOpacity={0.7}>
       <IconWrapper>
         <DiscordImage source={DiscordImg} resizeMode="contain" />
       </IconWrapper>

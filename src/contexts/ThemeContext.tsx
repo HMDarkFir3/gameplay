@@ -3,8 +3,8 @@ import React, { createContext, useState } from "react";
 
 //styled-componentes
 import { DefaultTheme, ThemeProvider } from "styled-components";
-import light from "../global/styles/themes/light";
-import dark from "../global/styles/themes/dark";
+import light from "../global/themes/light";
+import dark from "../global/themes/dark";
 
 //Interface
 type ThemeContextData = {

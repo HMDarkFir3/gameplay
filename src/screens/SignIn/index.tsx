@@ -30,16 +30,17 @@ export default function SignIn() {
         backgroundColor="transparent"
         translucent={true}
       />
+
       <IllustrationImage source={IllustrationImg} resizeMode="stretch" />
 
       <Content>
         <Title>
-          Conecte-se{'\n'}e organize suas{'\n'}
+          Conecte-se{"\n"}e organize suas{"\n"}
           jogatinas
         </Title>
 
         <SubTitle>
-          Crie grupos para jogar seus games{'\n'}
+          Crie grupos para jogar seus games{"\n"}
           favoritos com seus amigos
         </SubTitle>
 

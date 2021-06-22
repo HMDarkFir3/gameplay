@@ -16,6 +16,9 @@ import {
 //Contexts
 import ThemesProvider from "./src/contexts/ThemeContext";
 
+//Components
+import Background from "./src/components/Background";
+
 //Screens
 import SignIn from "./src/screens/SignIn";
 
@@ -32,10 +35,10 @@ export default function App() {
   }
 
   return (
-    <>
-      <ThemesProvider>
+    <ThemesProvider>
+      <Background>
         <SignIn />
-      </ThemesProvider>
-    </>
+      </Background>
+    </ThemesProvider>
   );
 }

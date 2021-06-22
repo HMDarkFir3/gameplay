@@ -5,12 +5,22 @@ declare module "styled-components" {
     title: string;
 
     colors: {
-      background: string;
-      red: string;
-      redLine: string;
+      primary: string;
 
-      text: string;
-      textButton: string;
+      secondary100: string;
+      secondary90: string;
+      secondary80: string;
+      secondary70: string;
+      secondary60: string;
+      secondary50: string;
+      secondary40: string;
+      secondary30: string;
+
+      overlay: string;
+      highlight: string;
+      heading: string;
+      line: string;
+      on: string;
     };
   }
 }
