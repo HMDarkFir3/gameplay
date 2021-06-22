@@ -1,35 +1,23 @@
 //styled-components
 import styled from "styled-components/native";
 
-//Fonts
-import fonts from "../../global/fonts";
+//Expo
+import { LinearGradient } from "expo-linear-gradient";
 
-export const Container = styled.View`
-  flex-direction: row;
+export const Container = styled(LinearGradient)`
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  margin-right: 18px;
+  border-radius: 8px;
 `;
 
-export const Content = styled.View``;
+export const ImageAvatar = styled.Image`
+  width: 48px;
+  height: 48px;
 
-export const UserView = styled.View`
-  flex-direction: row;
-`;
-
-export const Greeting = styled.Text`
-  margin-right: 6px;
-
-  font-family: ${fonts.RajdhaniMedium};
-  font-size: 24px;
-  color: ${(props) => props.theme.colors.heading};
-`;
-
-export const UserName = styled.Text`
-  font-family: ${fonts.RajdhaniBold};
-  font-size: 24px;
-  color: ${(props) => props.theme.colors.heading};
-`;
-
-export const Message = styled.Text`
-  font-family: ${fonts.InterRegular};
-  font-size: 18px;
-  color: ${(props) => props.theme.colors.highlight};
+  border-radius: 8px;
 `;

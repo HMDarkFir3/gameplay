@@ -6,6 +6,7 @@ import fonts from "../../global/fonts";
 
 export const Container = styled.View`
   flex-direction: row;
+  align-items: center;
 `;
 
 export const UserView = styled.View`

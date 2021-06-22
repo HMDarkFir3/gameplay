@@ -1,27 +1,25 @@
 //React
-import React from "react";
+import React, { useContext, ReactNode } from "react";
+
+//Contexts
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Styles
-import {
-  Container,
-  Content,
-  UserView,
-  Greeting,
-  UserName,
-  Message,
-} from "./styles";
+import { Container, ImageAvatar } from "./styles";
 
-export default function Avatar() {
+//Types
+type Props = {
+  urlImage: string;
+};
+
+export default function Avatar(props: Props) {
+  const { urlImage } = props;
+
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <Container>
-      <Content>
-        <UserView>
-          <Greeting>Olá,</Greeting>
-          <UserName>Henrique</UserName>
-        </UserView>
-
-        <Message>Hoje é dia de vitória</Message>
-      </Content>
+    <Container colors={[theme.colors.secondary50, theme.colors.secondary70]}>
+      <ImageAvatar source={{ uri: urlImage }} />
     </Container>
   );
 }
