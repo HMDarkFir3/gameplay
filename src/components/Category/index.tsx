@@ -1,16 +1,13 @@
 //React
 import React, { useContext } from "react";
-import { RectButtonProps } from "react-native-gesture-handler";
+import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { SvgProps } from "react-native-svg";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
 
-//Utils
-import categories from "../../utils/categories";
-
 //Styles
-import { Container, Gradient, Content, Checked, Title } from "./styles";
+import { Container, Content, Checked, Title } from "./styles";
 
 //Types
 type Props = RectButtonProps & {
@@ -25,16 +22,15 @@ export default function Category(props: Props) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Container {...rest}>
-      <Gradient colors={[theme.colors.secondary50, theme.colors.secondary70]}>
+    <RectButton {...rest}>
+      <Container colors={[theme.colors.secondary50, theme.colors.secondary70]}>
         <Content checked={checked}>
-          <Checked checked={checked}>
-            <Icon width={48} height={48} />
-          </Checked>
+          <Checked checked={checked} />
+          <Icon width={48} height={48} />
 
           <Title>{title}</Title>
         </Content>
-      </Gradient>
-    </Container>
+      </Container>
+    </RectButton>
   );
 }
