@@ -7,6 +7,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Components
 import Profile from "../../components/Profile";
+import ButtonAdd from "../../components/ButtonAdd";
 
 //Styles
 import { Container, Header } from "./styles";
@@ -23,6 +24,7 @@ export default function Home() {
       />
       <Header>
         <Profile />
+        <ButtonAdd />
       </Header>
     </Container>
   );

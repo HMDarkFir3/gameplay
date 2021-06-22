@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Components
-import DiscordButton from "../../components/DiscordButton";
+import ButtonDiscord from "../../components/ButtonDiscord";
 
 //Styles
 import {
@@ -53,7 +53,7 @@ export default function SignIn() {
           favoritos com seus amigos
         </SubTitle>
 
-        <DiscordButton title="Entrar com Discord" onPress={navigateToHome} />
+        <ButtonDiscord title="Entrar com Discord" onPress={navigateToHome} />
       </Content>
     </Container>
   );

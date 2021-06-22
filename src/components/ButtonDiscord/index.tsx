@@ -13,7 +13,7 @@ type Props = RectButtonProps & {
   title: string;
 };
 
-export default function DiscordButton(props: Props) {
+export default function ButtonDiscord(props: Props) {
   const { title, ...rest } = props;
 
   return (
