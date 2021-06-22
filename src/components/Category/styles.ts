@@ -40,8 +40,8 @@ export const Content = styled.View<Props>`
 export const Checked = styled.View<Props>`
   align-self: flex-end;
 
-  width: ${(props) => (props.checked === true ? 10 : 12)}px;
-  height: ${(props) => (props.checked === true ? 10 : 12)}px;
+  width: ${(props) => (props.checked === true ? 10 : 10)}px;
+  height: ${(props) => (props.checked === true ? 10 : 10)}px;
 
   margin-right: 7px;
 

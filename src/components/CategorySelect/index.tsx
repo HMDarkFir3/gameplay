@@ -21,7 +21,7 @@ export default function CategorySelect(props: Props) {
 
   return (
     <Scroller
-      horizontal={true}
+      horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{ paddingRight: 40 }}
     >

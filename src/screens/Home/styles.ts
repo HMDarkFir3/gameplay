@@ -23,3 +23,9 @@ export const Header = styled.View`
   padding-left: 24px;
   padding-right: 24px;
 `;
+
+export const Content = styled.View`
+  margin-top: 42px;
+`;
+
+export const List = styled.FlatList``;
