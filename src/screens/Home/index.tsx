@@ -1,6 +1,6 @@
 //React
 import React, { useContext } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, View } from "react-native";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -8,6 +8,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 //Components
 import Profile from "../../components/Profile";
 import ButtonAdd from "../../components/ButtonAdd";
+import CategorySelect from "../../components/CategorySelect";
 
 //Styles
 import { Container, Header } from "./styles";
@@ -26,6 +27,10 @@ export default function Home() {
         <Profile />
         <ButtonAdd />
       </Header>
+
+      <View>
+        <CategorySelect />
+      </View>
     </Container>
   );
 }
