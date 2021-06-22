@@ -18,7 +18,7 @@ import {
 } from "./styles";
 
 //Image
-import IllustrationImg from "../../assets/images/illustration.png";
+import IllustrationImg from "../../assets/images/yasuo.png";
 
 export default function SignIn() {
   const { theme } = useContext(ThemeContext);
@@ -31,7 +31,7 @@ export default function SignIn() {
         translucent={true}
       />
 
-      <IllustrationImage source={IllustrationImg} resizeMode="stretch" />
+      <IllustrationImage source={IllustrationImg} resizeMode="contain" />
 
       <Content>
         <Title>

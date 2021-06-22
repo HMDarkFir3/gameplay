@@ -12,11 +12,11 @@ export const Container = styled.View`
 
 export const IllustrationImage = styled.Image`
   width: 100%;
-  height: 360px;
+  height: 270px;
 `;
 
 export const Content = styled.View`
-  margin-top: -50px;
+  margin-top: -20px;
   padding-left: 50px;
   padding-right: 50px;
 `;
