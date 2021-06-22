@@ -1,5 +1,5 @@
 //React
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StatusBar, View } from "react-native";
 
 //Contexts
@@ -16,6 +16,16 @@ import { Container, Header } from "./styles";
 export default function Home() {
   const { theme } = useContext(ThemeContext);
 
+  const [category, setCategory] = useState("");
+
+  function handleCategorySelect(categoryId: string) {
+    if (categoryId === category) {
+      setCategory("");
+    } else {
+      setCategory(categoryId);
+    }
+  }
+
   return (
     <Container>
       <StatusBar
@@ -29,7 +39,10 @@ export default function Home() {
       </Header>
 
       <View>
-        <CategorySelect />
+        <CategorySelect
+          categorySelect={category}
+          setCategory={handleCategorySelect}
+        />
       </View>
     </Container>
   );

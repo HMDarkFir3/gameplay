@@ -8,15 +8,16 @@ import categories from "../../utils/categories";
 import Category from "../Category";
 
 //Styles
-import { Scroller, Container } from "./styles";
+import { Scroller } from "./styles";
 
 //Types
 type Props = {
   categorySelect: string;
+  setCategory: (categoryId: string) => void;
 };
 
 export default function CategorySelect(props: Props) {
-  const { categorySelect } = props;
+  const { categorySelect, setCategory } = props;
 
   return (
     <Scroller
@@ -30,6 +31,7 @@ export default function CategorySelect(props: Props) {
           title={category.title}
           icon={category.icon}
           checked={category.id === categorySelect}
+          onPress={() => setCategory(category.id)}
         />
       ))}
     </Scroller>
