@@ -2,6 +2,9 @@
 import React, { useContext } from "react";
 import { StatusBar } from "react-native";
 
+//React Navigation
+import { useNavigation } from "@react-navigation/native";
+
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
 
@@ -22,6 +25,12 @@ import IllustrationImg from "../../assets/images/yasuo.png";
 
 export default function SignIn() {
   const { theme } = useContext(ThemeContext);
+
+  const navigation = useNavigation();
+
+  function navigateToHome() {
+    navigation.navigate("Home");
+  }
 
   return (
     <Container>
@@ -44,7 +53,7 @@ export default function SignIn() {
           favoritos com seus amigos
         </SubTitle>
 
-        <DiscordButton title="Entrar com Discord" />
+        <DiscordButton title="Entrar com Discord" onPress={navigateToHome} />
       </Content>
     </Container>
   );

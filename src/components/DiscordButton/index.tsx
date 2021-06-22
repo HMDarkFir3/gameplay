@@ -1,6 +1,6 @@
 //React
 import React from "react";
-import { TouchableOpacityProps } from "react-native";
+import { RectButtonProps } from "react-native-gesture-handler";
 
 //Styles
 import { Container, IconWrapper, DiscordImage, Title } from "./styles";
@@ -9,15 +9,15 @@ import { Container, IconWrapper, DiscordImage, Title } from "./styles";
 import DiscordImg from "../../assets/images/discord.png";
 
 //Types
-type Props = TouchableOpacityProps & {
+type Props = RectButtonProps & {
   title: string;
 };
 
 export default function DiscordButton(props: Props) {
-  const { title } = props;
+  const { title, ...rest } = props;
 
   return (
-    <Container activeOpacity={0.7}>
+    <Container {...rest}>
       <IconWrapper>
         <DiscordImage source={DiscordImg} resizeMode="contain" />
       </IconWrapper>

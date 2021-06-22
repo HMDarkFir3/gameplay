@@ -19,8 +19,8 @@ import ThemesProvider from "./src/contexts/ThemeContext";
 //Components
 import Background from "./src/components/Background";
 
-//Screens
-import Home from "./src/screens/Home";
+//Routes
+import Routes from "./src/routes";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -37,7 +37,7 @@ export default function App() {
   return (
     <ThemesProvider>
       <Background>
-        <Home />
+        <Routes />
       </Background>
     </ThemesProvider>
   );
