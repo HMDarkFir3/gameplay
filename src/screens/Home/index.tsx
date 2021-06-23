@@ -1,6 +1,6 @@
 //React
 import React, { useContext, useState } from "react";
-import { StatusBar, FlatList } from "react-native";
+import { StatusBar, View, FlatList } from "react-native";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -14,7 +14,7 @@ import Appointment from "../../components/Appointment";
 import ListDivider from "../../components/ListDivider";
 
 //Styles
-import { Container, Header, Content, List } from "./styles";
+import { Container, Header, Content } from "./styles";
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
@@ -102,15 +102,17 @@ export default function Home() {
       />
 
       <Content>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-
         <FlatList
-          style={{ marginTop: 10, marginLeft: 24 }}
+          style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
           data={appointments}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Appointment data={item} />}
           showsVerticalScrollIndicator={true}
           ItemSeparatorComponent={() => <ListDivider />}
+          ListHeaderComponent={() => (
+            <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+          )}
+          ListHeaderComponentStyle={{ marginBottom: 10 }}
         />
       </Content>
     </Container>

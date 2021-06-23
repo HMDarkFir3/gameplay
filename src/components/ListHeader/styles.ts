@@ -11,7 +11,6 @@ export const Container = styled.View`
 
   width: 100%;
 
-  padding-left: 24px;
   padding-right: 24px;
 `;
 
