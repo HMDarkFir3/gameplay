@@ -28,4 +28,7 @@ export const Content = styled.View`
   margin-top: 42px;
 `;
 
-export const List = styled.FlatList``;
+export const List = styled.FlatList`
+  margin-top: 10px;
+  margin-left: 24px;
+`;

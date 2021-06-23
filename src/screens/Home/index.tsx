@@ -1,6 +1,6 @@
 //React
 import React, { useContext, useState } from "react";
-import { StatusBar, View, FlatList } from "react-native";
+import { StatusBar, FlatList } from "react-native";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -11,6 +11,7 @@ import ButtonAdd from "../../components/ButtonAdd";
 import CategorySelect from "../../components/CategorySelect";
 import ListHeader from "../../components/ListHeader";
 import Appointment from "../../components/Appointment";
+import ListDivider from "../../components/ListDivider";
 
 //Styles
 import { Container, Header, Content, List } from "./styles";
@@ -95,22 +96,23 @@ export default function Home() {
         <ButtonAdd />
       </Header>
 
-      <View>
-        <CategorySelect
-          categorySelect={category}
-          setCategory={handleCategorySelect}
+      <CategorySelect
+        categorySelect={category}
+        setCategory={handleCategorySelect}
+      />
+
+      <Content>
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+
+        <FlatList
+          style={{ marginTop: 10, marginLeft: 24 }}
+          data={appointments}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <Appointment data={item} />}
+          showsVerticalScrollIndicator={true}
+          ItemSeparatorComponent={() => <ListDivider />}
         />
-
-        <Content>
-          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Appointment data={item} />}
-          />
-        </Content>
-      </View>
+      </Content>
     </Container>
   );
 }

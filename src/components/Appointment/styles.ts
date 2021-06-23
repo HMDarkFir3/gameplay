@@ -14,8 +14,6 @@ export const Container = styled.View`
   align-self: center;
 
   width: 100%;
-
-  margin-top: 12px;
 `;
 
 export const Content = styled.View`

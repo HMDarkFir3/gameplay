@@ -5,7 +5,6 @@ export const Image = styled.Image`
   width: 64px;
   height: 64px;
 
-  margin-left: 24px;
   margin-right: 20px;
 
   border-radius: 8px;
