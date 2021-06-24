@@ -104,6 +104,10 @@ export default function Home() {
     }
   }
 
+  function navigateToAppointmentCreate() {
+    navigation.navigate("AppointmentCreate");
+  }
+
   function navigateToAppointmentDetails() {
     navigation.navigate("AppointmentDetails");
   }
@@ -117,7 +121,7 @@ export default function Home() {
       />
       <Header>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={navigateToAppointmentCreate} />
       </Header>
 
       <CategorySelect

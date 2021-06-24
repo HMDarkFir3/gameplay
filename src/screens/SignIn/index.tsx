@@ -35,13 +35,13 @@ export default function SignIn() {
 
   return (
     <Background>
-      <Container>
-        <StatusBar
-          barStyle={theme.title === "light" ? "dark-content" : "light-content"}
-          backgroundColor="transparent"
-          translucent={true}
-        />
+      <StatusBar
+        barStyle={theme.title === "light" ? "dark-content" : "light-content"}
+        backgroundColor="transparent"
+        translucent={true}
+      />
 
+      <Container>
         <IllustrationImage source={IllustrationImg} resizeMode="contain" />
 
         <Content>

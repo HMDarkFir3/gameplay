@@ -11,6 +11,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import SignIn from "../screens/SignIn";
 import Home from "../screens/Home";
 import AppointmentDetails from "../screens/AppointmentDetails";
+import AppointmentCreate from "../screens/AppointmentCreate";
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,12 @@ export default function AuthRoutes() {
       <Stack.Screen
         name="AppointmentDetails"
         component={AppointmentDetails}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="AppointmentCreate"
+        component={AppointmentCreate}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
