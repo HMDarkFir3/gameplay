@@ -1,6 +1,6 @@
 //React
 import React, { useContext, useState } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, View, ScrollView, Platform } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 
 //React Navigation
@@ -14,9 +14,24 @@ import Background from "../../components/Background";
 import Header from "../../components/Header";
 import CategorySelect from "../../components/CategorySelect";
 import GuildIcon from "../../components/GuildIcon";
+import SmallInput from "../../components/SmallInput";
+import TextArea from "../../components/TextArea";
+import Button from "../../components/Button";
 
 //Styles
-import { Label, Form, Select, Image, SelectBody } from "./styles";
+import {
+  Container,
+  Label,
+  Form,
+  Select,
+  Image,
+  SelectBody,
+  Field,
+  Column,
+  Divider,
+  Max,
+  Footer,
+} from "./styles";
 
 //Icons
 import { Feather } from "@expo/vector-icons";
@@ -38,44 +53,83 @@ export default function AppointmentCreate() {
 
   return (
     <Background>
-      <StatusBar
-        barStyle={theme.title === "light" ? "dark-content" : "light-content"}
-        backgroundColor="transparent"
-        translucent={true}
-      />
+      <Container behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        <StatusBar
+          barStyle={theme.title === "light" ? "dark-content" : "light-content"}
+          backgroundColor="transparent"
+          translucent={true}
+        />
+        <Header title="Agendar partida" />
+        <ScrollView>
+          <Label style={{ marginTop: 36, marginBottom: 18, marginLeft: 24 }}>
+            Categoria
+          </Label>
 
-      <Header title="Agendar partida" />
+          <CategorySelect
+            hasCheckBox={true}
+            categorySelect={category}
+            setCategory={handleCategorySelect}
+          />
 
-      <Label style={{ marginTop: 36, marginBottom: 18, marginLeft: 24 }}>
-        Categoria
-      </Label>
+          <Form>
+            <RectButton>
+              <Select>
+                {
+                  <GuildIcon />
 
-      <CategorySelect
-        hasCheckBox={true}
-        categorySelect={category}
-        setCategory={handleCategorySelect}
-      />
+                  /* <Image />*/
+                }
 
-      <Form>
-        <RectButton>
-          <Select>
-            {
-              <GuildIcon />
+                <SelectBody>
+                  <Label>Selecione um servidor</Label>
+                </SelectBody>
+                <Feather
+                  name="chevron-right"
+                  color={theme.colors.heading}
+                  size={18}
+                />
+              </Select>
+            </RectButton>
 
-              /* <Image />*/
-            }
+            <Field>
+              <View>
+                <Label>Dia e mês</Label>
+                <Column>
+                  <SmallInput maxLength={2} />
+                  <Divider>/</Divider>
+                  <SmallInput maxLength={2} />
+                </Column>
+              </View>
 
-            <SelectBody>
-              <Label>Selecione um servidor</Label>
-            </SelectBody>
-            <Feather
-              name="chevron-right"
-              color={theme.colors.heading}
-              size={18}
+              <View>
+                <Label>Hora e minuto</Label>
+                <Column>
+                  <SmallInput maxLength={2} />
+                  <Divider>:</Divider>
+                  <SmallInput maxLength={2} />
+                </Column>
+              </View>
+            </Field>
+
+            <Field style={{ marginBottom: 12 }}>
+              <Label>Descrição</Label>
+
+              <Max>Max 100 caracteres</Max>
+            </Field>
+
+            <TextArea
+              multiline={true}
+              maxLength={100}
+              numberOfLines={5}
+              autoCorrect={false}
             />
-          </Select>
-        </RectButton>
-      </Form>
+
+            <Footer>
+              <Button title="Agendar" />
+            </Footer>
+          </Form>
+        </ScrollView>
+      </Container>
     </Background>
   );
 }
