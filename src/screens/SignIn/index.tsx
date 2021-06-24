@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Components
+import Background from "../../components/Background";
 import ButtonDiscord from "../../components/ButtonDiscord";
 
 //Styles
@@ -33,28 +34,30 @@ export default function SignIn() {
   }
 
   return (
-    <Container>
-      <StatusBar
-        barStyle={theme.title === "light" ? "dark-content" : "light-content"}
-        backgroundColor="transparent"
-        translucent={true}
-      />
+    <Background>
+      <Container>
+        <StatusBar
+          barStyle={theme.title === "light" ? "dark-content" : "light-content"}
+          backgroundColor="transparent"
+          translucent={true}
+        />
 
-      <IllustrationImage source={IllustrationImg} resizeMode="contain" />
+        <IllustrationImage source={IllustrationImg} resizeMode="contain" />
 
-      <Content>
-        <Title>
-          Conecte-se{"\n"}e organize suas{"\n"}
-          jogatinas
-        </Title>
+        <Content>
+          <Title>
+            Conecte-se{"\n"}e organize suas{"\n"}
+            jogatinas
+          </Title>
 
-        <SubTitle>
-          Crie grupos para jogar seus games{"\n"}
-          favoritos com seus amigos
-        </SubTitle>
+          <SubTitle>
+            Crie grupos para jogar seus games{"\n"}
+            favoritos com seus amigos
+          </SubTitle>
 
-        <ButtonDiscord title="Entrar com Discord" onPress={navigateToHome} />
-      </Content>
-    </Container>
+          <ButtonDiscord title="Entrar com Discord" onPress={navigateToHome} />
+        </Content>
+      </Container>
+    </Background>
   );
 }

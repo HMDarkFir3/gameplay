@@ -1,21 +1,26 @@
 //React
-import React from "react";
+import React, { useContext } from "react";
 
 //React Navigation
 import { createStackNavigator } from "@react-navigation/stack";
 
-//Screen
+//Contexts
+import { ThemeContext } from "../contexts/ThemeContext";
+
+//Screens
 import SignIn from "../screens/SignIn";
 import Home from "../screens/Home";
 
 const Stack = createStackNavigator();
 
 export default function AuthRoutes() {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <Stack.Navigator
       screenOptions={{
         cardStyle: {
-          backgroundColor: "transparent",
+          backgroundColor: theme.colors.secondary100,
         },
       }}
     >

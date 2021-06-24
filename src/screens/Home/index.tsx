@@ -6,6 +6,7 @@ import { StatusBar, View, FlatList } from "react-native";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 //Components
+import Background from "../../components/Background";
 import Profile from "../../components/Profile";
 import ButtonAdd from "../../components/ButtonAdd";
 import CategorySelect from "../../components/CategorySelect";
@@ -14,7 +15,7 @@ import Appointment from "../../components/Appointment";
 import ListDivider from "../../components/ListDivider";
 
 //Styles
-import { Container, Header, Content } from "./styles";
+import { Header, Content } from "./styles";
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
@@ -85,7 +86,7 @@ export default function Home() {
   }
 
   return (
-    <Container>
+    <Background>
       <StatusBar
         barStyle={theme.title === "light" ? "dark-content" : "light-content"}
         backgroundColor="transparent"
@@ -115,6 +116,6 @@ export default function Home() {
           ListHeaderComponentStyle={{ marginBottom: 10 }}
         />
       </Content>
-    </Container>
+    </Background>
   );
 }
