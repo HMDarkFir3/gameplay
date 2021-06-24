@@ -12,19 +12,45 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 //Components
 import Background from "../../components/Background";
 import Header from "../../components/Header";
+import ListHeader from "../../components/ListHeader";
+import Member from "../../components/Member";
+import ListDivider from "../../components/ListDivider";
 
 //Styles
-import { Banner, Title, Subtitle } from "./styles";
+import { Banner, BannerContent, Title, Subtitle, List } from "./styles";
 
 //Images
 import BannerImg from "../../assets/images/banner.png";
+
 //Icons
 import { Fontisto } from "@expo/vector-icons";
+
+export type MemberProps = {
+  id: string;
+  username: string;
+  avatar_url: string;
+  status: string;
+};
 
 export default function AppointmentDetails() {
   const { theme } = useContext(ThemeContext);
 
   const navigation = useNavigation();
+
+  const members = [
+    {
+      id: "1",
+      username: "Henrique",
+      avatar_url: "https://github.com/hmdarkfir3.png",
+      status: "online",
+    },
+    {
+      id: "2",
+      username: "Rodrigo",
+      avatar_url: "https://github.com/rodrigorgtic.png",
+      status: "offline",
+    },
+  ];
 
   function navigateToHome() {
     navigation.navigate("Home");
@@ -48,11 +74,22 @@ export default function AppointmentDetails() {
       />
 
       <Banner source={BannerImg}>
-        <Title>Lendários</Title>
-        <Subtitle>
-          É hoje que vamos chegar ao challenger sem perder uma partida da md10
-        </Subtitle>
+        <BannerContent>
+          <Title>Lendários</Title>
+          <Subtitle>
+            É hoje que vamos chegar ao challenger sem perder uma partida da md10
+          </Subtitle>
+        </BannerContent>
       </Banner>
+
+      <ListHeader title="Jogadores" subtitle="Total 3" />
+
+      <List
+        data={members}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Member data={item} />}
+        ItemSeparatorComponent={() => <ListDivider />}
+      />
     </Background>
   );
 }

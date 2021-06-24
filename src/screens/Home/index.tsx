@@ -112,6 +112,7 @@ export default function Home() {
       />
 
       <Content>
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
         <FlatList
           style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
           data={appointments}
@@ -121,10 +122,6 @@ export default function Home() {
           )}
           showsVerticalScrollIndicator={true}
           ItemSeparatorComponent={() => <ListDivider />}
-          ListHeaderComponent={() => (
-            <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-          )}
-          ListHeaderComponentStyle={{ marginBottom: 10 }}
         />
       </Content>
     </Background>
