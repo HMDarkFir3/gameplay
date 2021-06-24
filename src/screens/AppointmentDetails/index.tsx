@@ -1,6 +1,6 @@
 //React
 import React, { useContext } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, FlatList } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 
 //React Navigation
@@ -15,9 +15,10 @@ import Header from "../../components/Header";
 import ListHeader from "../../components/ListHeader";
 import Member from "../../components/Member";
 import ListDivider from "../../components/ListDivider";
+import ButtonDiscord from "../../components/ButtonDiscord";
 
 //Styles
-import { Banner, BannerContent, Title, Subtitle, List } from "./styles";
+import { Banner, BannerContent, Title, Subtitle, ButtonArea } from "./styles";
 
 //Images
 import BannerImg from "../../assets/images/banner.png";
@@ -46,6 +47,18 @@ export default function AppointmentDetails() {
     },
     {
       id: "2",
+      username: "Rodrigo",
+      avatar_url: "https://github.com/rodrigorgtic.png",
+      status: "offline",
+    },
+    {
+      id: "3",
+      username: "Rodrigo",
+      avatar_url: "https://github.com/rodrigorgtic.png",
+      status: "offline",
+    },
+    {
+      id: "4",
       username: "Rodrigo",
       avatar_url: "https://github.com/rodrigorgtic.png",
       status: "offline",
@@ -84,12 +97,17 @@ export default function AppointmentDetails() {
 
       <ListHeader title="Jogadores" subtitle="Total 3" />
 
-      <List
+      <FlatList
+        style={{ marginTop: 27, marginLeft: 24 }}
         data={members}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Member data={item} />}
         ItemSeparatorComponent={() => <ListDivider />}
       />
+
+      <ButtonArea>
+        <ButtonDiscord title="Entrar na partida" />
+      </ButtonArea>
     </Background>
   );
 }

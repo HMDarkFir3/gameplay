@@ -80,6 +80,20 @@ export default function Home() {
       description:
         "É hoje que vamos chegar ao challenger sem perder uma partida da md10",
     },
+
+    {
+      id: "5",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "22/06 às 20:40h",
+      description:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10",
+    },
   ];
 
   function handleCategorySelect(categoryId: string) {
@@ -110,20 +124,20 @@ export default function Home() {
         categorySelect={category}
         setCategory={handleCategorySelect}
       />
-
       <Content>
         <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-        <FlatList
-          style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Appointment data={item} onPress={navigateToAppointmentDetails} />
-          )}
-          showsVerticalScrollIndicator={true}
-          ItemSeparatorComponent={() => <ListDivider />}
-        />
       </Content>
+
+      <FlatList
+        style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Appointment data={item} onPress={navigateToAppointmentDetails} />
+        )}
+        showsVerticalScrollIndicator={true}
+        ItemSeparatorComponent={() => <ListDivider />}
+      />
     </Background>
   );
 }

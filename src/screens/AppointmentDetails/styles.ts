@@ -1,6 +1,9 @@
 //styled-components
 import styled from "styled-components/native";
 
+//react-native-iphone-x-helper
+import { getBottomSpace } from "react-native-iphone-x-helper";
+
 //Fonts
 import fonts from "../../global/fonts";
 
@@ -32,7 +35,10 @@ export const Subtitle = styled.Text`
   color: ${(props) => props.theme.colors.heading};
 `;
 
-export const List = styled.FlatList`
-  margin-top: 27px;
-  margin-left: 24px;
+export const ButtonArea = styled.View`
+  margin-bottom: ${getBottomSpace()}px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
