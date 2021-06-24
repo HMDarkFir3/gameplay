@@ -1,6 +1,9 @@
 //React
 import React, { useContext, useState } from "react";
-import { StatusBar, View, FlatList } from "react-native";
+import { StatusBar, FlatList } from "react-native";
+
+//React Navigation
+import { useNavigation } from "@react-navigation/native";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -21,6 +24,8 @@ export default function Home() {
   const { theme } = useContext(ThemeContext);
 
   const [category, setCategory] = useState("");
+
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -85,6 +90,10 @@ export default function Home() {
     }
   }
 
+  function navigateToAppointmentDetails() {
+    navigation.navigate("AppointmentDetails");
+  }
+
   return (
     <Background>
       <StatusBar
@@ -107,7 +116,9 @@ export default function Home() {
           style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
           data={appointments}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
+          renderItem={({ item }) => (
+            <Appointment data={item} onPress={navigateToAppointmentDetails} />
+          )}
           showsVerticalScrollIndicator={true}
           ItemSeparatorComponent={() => <ListDivider />}
           ListHeaderComponent={() => (

@@ -5,7 +5,6 @@ import { SvgProps } from "react-native-svg";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
-import categories from "../../utils/categories";
 
 //Styles
 import { Container, Content, Checked, Title } from "./styles";
