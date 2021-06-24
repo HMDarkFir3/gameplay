@@ -23,7 +23,7 @@ export default function Category(props: Props) {
     title,
     icon: Icon,
     isChecked = false,
-    hasCheckBox = true,
+    hasCheckBox = false,
     ...rest
   } = props;
 

@@ -14,10 +14,11 @@ import { Scroller } from "./styles";
 type Props = {
   categorySelect: string;
   setCategory: (categoryId: string) => void;
+  hasCheckBox?: boolean;
 };
 
 export default function CategorySelect(props: Props) {
-  const { categorySelect, setCategory } = props;
+  const { categorySelect, setCategory, hasCheckBox = false } = props;
 
   return (
     <Scroller
@@ -31,6 +32,7 @@ export default function CategorySelect(props: Props) {
           title={category.title}
           icon={category.icon}
           isChecked={category.id === categorySelect}
+          hasCheckBox={hasCheckBox}
           onPress={() => setCategory(category.id)}
         />
       ))}
