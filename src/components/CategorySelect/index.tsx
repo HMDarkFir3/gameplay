@@ -30,7 +30,7 @@ export default function CategorySelect(props: Props) {
           key={category.id}
           title={category.title}
           icon={category.icon}
-          checked={category.id === categorySelect}
+          isChecked={category.id === categorySelect}
           onPress={() => setCategory(category.id)}
         />
       ))}

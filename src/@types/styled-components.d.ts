@@ -10,6 +10,7 @@ declare module "styled-components" {
       secondary100: string;
       secondary90: string;
       secondary80: string;
+      secondary85: string;
       secondary70: string;
       secondary60: string;
       secondary50: string;

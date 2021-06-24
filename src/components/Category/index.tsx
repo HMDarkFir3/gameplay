@@ -5,6 +5,7 @@ import { SvgProps } from "react-native-svg";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
+import categories from "../../utils/categories";
 
 //Styles
 import { Container, Content, Checked, Title } from "./styles";
@@ -13,19 +14,33 @@ import { Container, Content, Checked, Title } from "./styles";
 type Props = RectButtonProps & {
   title: string;
   icon: React.FC<SvgProps>;
-  checked?: boolean;
+  isChecked?: boolean;
+  hasCheckBox?: boolean;
 };
 
 export default function Category(props: Props) {
-  const { title, icon: Icon, checked = false, ...rest } = props;
+  const {
+    title,
+    icon: Icon,
+    isChecked = false,
+    hasCheckBox = true,
+    ...rest
+  } = props;
 
   const { theme } = useContext(ThemeContext);
 
   return (
     <RectButton {...rest}>
       <Container colors={[theme.colors.secondary50, theme.colors.secondary70]}>
-        <Content checked={checked}>
-          <Checked checked={checked} />
+        <Content
+          colors={[
+            isChecked ? theme.colors.secondary85 : theme.colors.secondary50,
+            theme.colors.secondary40,
+          ]}
+          isChecked={isChecked}
+        >
+          {hasCheckBox && <Checked isChecked={isChecked} />}
+
           <Icon width={48} height={48} />
 
           <Title>{title}</Title>
