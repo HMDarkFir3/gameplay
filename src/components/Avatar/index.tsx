@@ -1,8 +1,8 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container, ImageAvatar } from "./styles";
@@ -15,7 +15,7 @@ type Props = {
 export default function Avatar(props: Props) {
   const { urlImage } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <Container colors={[theme.colors.secondary50, theme.colors.secondary70]}>

@@ -1,8 +1,8 @@
 //React
-import React, { useContext, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container } from "./styles";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default function Background({ children }: Props) {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <Container colors={[theme.colors.secondary80, theme.colors.secondary100]}>

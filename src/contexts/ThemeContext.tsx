@@ -1,5 +1,5 @@
 //React
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, ReactNode } from "react";
 
 //styled-componentes
 import { DefaultTheme, ThemeProvider } from "styled-components";
@@ -14,9 +14,13 @@ type ThemeContextData = {
   toggleTheme(): void;
 };
 
+type ThemeProviderProps = {
+  children: ReactNode;
+};
+
 export const ThemeContext = createContext({} as ThemeContextData);
 
-export default function ThemesProvider({ children }: any) {
+export default function ThemesProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(dark);
 
   function toggleTheme() {

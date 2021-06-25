@@ -1,13 +1,13 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 import { StatusBar, FlatList } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Components
 import Background from "../../components/Background";
@@ -34,7 +34,7 @@ export type MemberProps = {
 };
 
 export default function AppointmentDetails() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const navigation = useNavigation();
 

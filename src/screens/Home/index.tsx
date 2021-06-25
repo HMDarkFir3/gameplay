@@ -1,12 +1,12 @@
 //React
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { StatusBar, FlatList } from "react-native";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Components
 import Background from "../../components/Background";
@@ -21,7 +21,7 @@ import ListDivider from "../../components/ListDivider";
 import { Header, Content } from "./styles";
 
 export default function Home() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const [category, setCategory] = useState("");
 

@@ -36,12 +36,12 @@ export default function App() {
   }
 
   return (
-    <AuthProvider>
-      <ThemesProvider>
-        <Background>
+    <ThemesProvider>
+      <Background>
+        <AuthProvider>
           <Routes />
-        </Background>
-      </ThemesProvider>
-    </AuthProvider>
+        </AuthProvider>
+      </Background>
+    </ThemesProvider>
   );
 }

@@ -1,13 +1,13 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 import { StatusBar, FlatList } from "react-native";
 
 //Components
 import Guild from "../../components/Guild";
 import ListDivider from "../../components/ListDivider";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container } from "./styles";
@@ -21,7 +21,7 @@ type Props = {
 export default function Guilds(props: Props) {
   const { handleGuildSelected } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const guilds = [
     {

@@ -1,11 +1,11 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 
 //react-native-gesture-handler
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Utils
 import categories from "../../utils/categories";
@@ -49,7 +49,7 @@ export type AppointmentProps = {
 export default function Appointment(props: Props) {
   const { data, ...rest } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const [category] = categories.filter((item) => item.id === data.category);
 

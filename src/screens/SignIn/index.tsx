@@ -1,12 +1,12 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 import { StatusBar } from "react-native";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Components
 import Background from "../../components/Background";
@@ -25,7 +25,7 @@ import {
 import IllustrationImg from "../../assets/images/yasuo.png";
 
 export default function SignIn() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const navigation = useNavigation();
 

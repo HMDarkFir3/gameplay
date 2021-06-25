@@ -1,9 +1,9 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 import { View, TouchableOpacityProps } from "react-native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Components
 import GuildIcon from "../GuildIcon";
@@ -29,7 +29,7 @@ export type GuildProps = {
 export default function Guild(props: Props) {
   const { data, ...rest } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <Container activeOpacity={0.7} {...rest}>

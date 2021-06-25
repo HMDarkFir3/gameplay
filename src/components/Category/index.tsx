@@ -1,5 +1,5 @@
 //React
-import React, { useContext } from "react";
+import React from "react";
 
 //react-native-gesture-handler
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
@@ -7,8 +7,8 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 //react-native-svg
 import { SvgProps } from "react-native-svg";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container, Content, Checked, Title } from "./styles";
@@ -30,7 +30,7 @@ export default function Category(props: Props) {
     ...rest
   } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <RectButton {...rest}>

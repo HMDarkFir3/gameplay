@@ -1,10 +1,10 @@
 //React
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { StatusBar, View, ScrollView, Platform } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Screens
 import Guilds from "../Guilds";
@@ -41,7 +41,7 @@ import { Feather } from "@expo/vector-icons";
 import { GuildProps } from "../../components/Guild";
 
 export default function AppointmentCreate() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const [category, setCategory] = useState("");
   const [open, setOpen] = useState(false);

@@ -1,5 +1,5 @@
 //React
-import React, { useContext, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { View } from "react-native";
 
 //react-native-gesture-handler
@@ -8,8 +8,8 @@ import { BorderlessButton } from "react-native-gesture-handler";
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Hooks
+import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container, Title } from "./styles";
@@ -26,7 +26,7 @@ type Props = {
 export default function Header(props: Props) {
   const { title, action } = props;
 
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const navigation = useNavigation();
 
