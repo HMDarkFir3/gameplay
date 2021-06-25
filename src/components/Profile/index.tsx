@@ -16,7 +16,7 @@ export default function Profile() {
 
   return (
     <Container>
-      <Avatar urlImage="https://github.com/hmdarkfir3.png" />
+      <Avatar urlImage={user.avatar} />
       <View>
         <UserView>
           <Greeting>Olá,</Greeting>
