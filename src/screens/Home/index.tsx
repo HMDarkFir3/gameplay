@@ -6,6 +6,7 @@ import { StatusBar, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 //Hooks
+import { useAuth } from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/useTheme";
 
 //Components
@@ -21,6 +22,7 @@ import ListDivider from "../../components/ListDivider";
 import { Header, Content } from "./styles";
 
 export default function Home() {
+  const { user } = useAuth();
   const { theme } = useTheme();
 
   const [category, setCategory] = useState("");
