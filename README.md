@@ -60,6 +60,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Expo](https://docs.expo.io)
 - [TypeScript](https://www.typescriptlang.org)
 - [React Navigation](https://reactnavigation.org)
+- [expo-auth-session](https://docs.expo.io/versions/latest/sdk/auth-session/)
+- [expo-random](https://docs.expo.io/versions/latest/sdk/random/)
 - [expo-font](https://docs.expo.io/versions/latest/sdk/font/)
 - [expo-google-fonts](https://docs.expo.io/guides/using-custom-fonts/#using-a-google-font)
 - [expo-app-loading](https://docs.expo.io/versions/latest/sdk/app-loading/)
