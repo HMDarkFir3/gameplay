@@ -1,6 +1,6 @@
 //React
 import React from "react";
-import { StatusBar, Alert } from "react-native";
+import { StatusBar, Alert, ActivityIndicator } from "react-native";
 
 //Hooks
 import { useAuth } from "../../hooks/useAuth";
@@ -23,7 +23,7 @@ import {
 import IllustrationImg from "../../assets/images/yasuo.png";
 
 export default function SignIn() {
-  const { signIn } = useAuth();
+  const { loading, signIn } = useAuth();
   const { theme } = useTheme();
 
   async function handleSignIn() {
@@ -56,7 +56,11 @@ export default function SignIn() {
             favoritos com seus amigos
           </SubTitle>
 
-          <ButtonDiscord title="Entrar com Discord" onPress={handleSignIn} />
+          {loading ? (
+            <ActivityIndicator color={theme.colors.primary} size="large" />
+          ) : (
+            <ButtonDiscord title="Entrar com Discord" onPress={handleSignIn} />
+          )}
         </Content>
       </Container>
     </Background>
