@@ -1,11 +1,14 @@
 //React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StatusBar, FlatList } from "react-native";
 
 //Components
 import Guild from "../../components/Guild";
 import ListDivider from "../../components/ListDivider";
 import Load from "../../components/Load";
+
+//Services
+import { api } from "../../services/api";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -28,7 +31,16 @@ export default function Guilds(props: Props) {
 
   const { theme } = useTheme();
 
-  function fetchGuilds() {}
+  useEffect(() => {
+    fetchGuilds();
+  }, []);
+
+  async function fetchGuilds() {
+    const response = await api.get("/users/@me/guilds");
+
+    setGuilds(response.data);
+    setLoading(false);
+  }
 
   return (
     <Container>
