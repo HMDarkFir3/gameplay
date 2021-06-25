@@ -8,11 +8,18 @@ import { useAuth } from "../../hooks/useAuth";
 //Components
 import Avatar from "../Avatar";
 
+//Utils
+import messageRandom from "../../utils/messageRandom";
+
 //Styles
 import { Container, UserView, Greeting, UserName, Message } from "./styles";
 
 export default function Profile() {
   const { user } = useAuth();
+
+  const messageLength = messageRandom.length;
+  const messageNumberRandom = Math.floor(Math.random() * messageLength);
+  const message = messageRandom[messageNumberRandom];
 
   return (
     <Container>
@@ -23,7 +30,7 @@ export default function Profile() {
           <UserName>{user.firstName}</UserName>
         </UserView>
 
-        <Message>Hoje é dia de vitória</Message>
+        <Message>{message}</Message>
       </View>
     </Container>
   );
