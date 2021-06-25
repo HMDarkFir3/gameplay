@@ -55,8 +55,12 @@ export default function AppointmentCreate() {
     }
   }
 
-  function openModal() {
+  function openModalGuild() {
     setOpen(true);
+  }
+
+  function closeModalGuild() {
+    setOpen(false);
   }
 
   function handleGuildSelect(guildSelect: GuildProps) {
@@ -85,7 +89,7 @@ export default function AppointmentCreate() {
           />
 
           <Form>
-            <RectButton onPress={openModal}>
+            <RectButton onPress={openModalGuild}>
               <Select>
                 {guild.icon ? <GuildIcon /> : <Image />}
 
@@ -140,7 +144,7 @@ export default function AppointmentCreate() {
             </Footer>
           </Form>
         </ScrollView>
-        <ModalView visible={open}>
+        <ModalView visible={open} closeModal={closeModalGuild}>
           <Guilds handleGuildSelected={handleGuildSelect} />
         </ModalView>
       </Container>

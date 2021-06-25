@@ -4,6 +4,7 @@ import styled from "styled-components/native";
 //Types
 type Props = {
   width: number;
+  isCentered: boolean;
 };
 
 export const Container = styled.View<Props>`
@@ -12,8 +13,8 @@ export const Container = styled.View<Props>`
   width: ${(props) => props.width + "%"};
   height: 1px;
 
-  margin-top: 2px;
-  margin-bottom: 31px;
+  margin-top: ${(props) => (props.isCentered ? 12 : 2) + "px"};
+  margin-bottom: ${(props) => (props.isCentered ? 12 : 31) + "px"};
 
   background-color: ${(props) => props.theme.colors.secondary40};
 `;

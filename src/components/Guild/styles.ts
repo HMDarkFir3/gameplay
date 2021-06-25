@@ -23,7 +23,8 @@ export const Content = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-bottom: 11px;
+  margin-top: 7px;
+  margin-bottom: 4px;
 
   font-family: ${fonts.RajdhaniBold};
   font-size: 18px;
@@ -31,7 +32,7 @@ export const Title = styled.Text`
 `;
 
 export const Type = styled.Text`
-  margin-bottom: 24px;
+  margin-bottom: 7px;
 
   font-family: ${fonts.InterRegular};
   font-size: 13px;

@@ -7,10 +7,11 @@ import { Container } from "./styles";
 //Types
 type Props = {
   width: number;
+  isCentered?: boolean;
 };
 
 export default function ListDivider(props: Props) {
-  const { width } = props;
+  const { width, isCentered = false } = props;
 
-  return <Container width={width} />;
+  return <Container width={width} isCentered={isCentered} />;
 }
