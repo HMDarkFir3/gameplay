@@ -3,9 +3,6 @@ import React, { useContext, useState } from "react";
 import { StatusBar, View, ScrollView, Platform } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 
-//React Navigation
-import { useNavigation } from "@react-navigation/native";
-
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
 
@@ -50,8 +47,6 @@ export default function AppointmentCreate() {
   const [open, setOpen] = useState(false);
   const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
-  const navigation = useNavigation();
-
   function handleCategorySelect(categoryId: string) {
     if (categoryId === category) {
       setCategory("");
@@ -92,14 +87,12 @@ export default function AppointmentCreate() {
           <Form>
             <RectButton onPress={openModal}>
               <Select>
-                {
-                  <GuildIcon />
-
-                  /* <Image />*/
-                }
+                {guild.icon ? <GuildIcon /> : <Image />}
 
                 <SelectBody>
-                  <Label>Selecione um servidor</Label>
+                  <Label>
+                    {guild.name ? guild.name : "Selecione um servidor"}
+                  </Label>
                 </SelectBody>
                 <Feather
                   name="chevron-right"

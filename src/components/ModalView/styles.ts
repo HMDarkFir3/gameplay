@@ -26,6 +26,7 @@ export const Bar = styled.View`
   height: 2px;
 
   margin-top: 13px;
+  margin-bottom: 103px;
 
   background-color: ${(props) => props.theme.colors.secondary30};
   border-radius: 2px;

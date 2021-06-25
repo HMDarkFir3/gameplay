@@ -41,8 +41,9 @@ export const Image = styled.View`
   height: 68px;
 
   background-color: ${(props) => props.theme.colors.secondary50};
-  border-width: 1px;
   border-radius: 8px;
+  border-width: 1px;
+  border-color: ${(props) => props.theme.colors.secondary50};
 `;
 
 export const SelectBody = styled.View`
