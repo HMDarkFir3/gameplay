@@ -1,6 +1,8 @@
 //React
 import React, { useContext, ReactNode } from "react";
 import { View } from "react-native";
+
+//react-native-gesture-handler
 import { BorderlessButton } from "react-native-gesture-handler";
 
 //React Navigation
@@ -40,7 +42,7 @@ export default function Header(props: Props) {
 
       <Title>{title}</Title>
 
-      {action && <View>{action}</View>}
+      {action ? <View>{action}</View> : <View style={{ width: 24 }} />}
     </Container>
   );
 }

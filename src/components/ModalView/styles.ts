@@ -1,14 +1,6 @@
 //styled-components
 import styled from "styled-components/native";
 
-//Expo
-import { LinearGradient } from "expo-linear-gradient";
-
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-
-//Fonts
-import fonts from "../../global/fonts";
-
 export const Overlay = styled.View`
   flex: 1;
   background-color: ${(props) => props.theme.colors.overlay};

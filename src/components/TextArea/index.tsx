@@ -11,5 +11,5 @@ type Props = TextInputProps;
 export default function TextArea(props: Props) {
   const { ...rest } = props;
 
-  return <Input {...rest} />;
+  return <Input style={{ textAlignVertical: "top" }} {...rest} />;
 }

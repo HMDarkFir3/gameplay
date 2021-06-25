@@ -30,6 +30,7 @@ export const Title = styled.Text`
 `;
 
 export const Subtitle = styled.Text`
+  line-height: 21px;
   font-family: ${fonts.InterRegular};
   font-size: 13px;
   color: ${(props) => props.theme.colors.heading};

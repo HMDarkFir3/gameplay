@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 
 //React
 import { TextInput } from "react-native";
+
 //Fonts
 import fonts from "../../global/fonts";
 
@@ -19,4 +20,6 @@ export const Input = styled(TextInput)`
 
   background-color: ${(props) => props.theme.colors.secondary40};
   border-radius: 8px;
+  border-width: 1px;
+  border-color: ${(props) => props.theme.colors.secondary50};
 `;

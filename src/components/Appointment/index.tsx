@@ -1,5 +1,7 @@
 //React
 import React, { useContext } from "react";
+
+//react-native-gesture-handler
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
 //Contexts
@@ -14,6 +16,7 @@ import GuildIcon from "../GuildIcon";
 //Style
 import {
   Container,
+  GuildIconContainer,
   Content,
   Header,
   Footer,
@@ -29,6 +32,8 @@ import {
 import { Feather } from "@expo/vector-icons";
 
 //Types
+import { GuildProps } from "../Guild";
+
 type Props = RectButtonProps & {
   data: AppointmentProps;
 };
@@ -41,13 +46,6 @@ export type AppointmentProps = {
   description: string;
 };
 
-export type GuildProps = {
-  id: string;
-  name: string;
-  icon?: null;
-  owner: boolean;
-};
-
 export default function Appointment(props: Props) {
   const { data, ...rest } = props;
 
@@ -58,7 +56,11 @@ export default function Appointment(props: Props) {
   return (
     <RectButton {...rest}>
       <Container>
-        <GuildIcon />
+        <GuildIconContainer
+          colors={[theme.colors.secondary50, theme.colors.secondary70]}
+        >
+          <GuildIcon />
+        </GuildIconContainer>
 
         <Content>
           <Header>

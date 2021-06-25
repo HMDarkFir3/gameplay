@@ -1,6 +1,10 @@
 //React
 import React, { useContext } from "react";
+
+//react-native-gesture-handler
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
+
+//react-native-svg
 import { SvgProps } from "react-native-svg";
 
 //Contexts

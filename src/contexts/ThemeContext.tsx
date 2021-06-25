@@ -3,10 +3,12 @@ import React, { createContext, useState } from "react";
 
 //styled-componentes
 import { DefaultTheme, ThemeProvider } from "styled-components";
+
+//Styles
 import light from "../global/themes/light";
 import dark from "../global/themes/dark";
 
-//Interface
+//Types
 type ThemeContextData = {
   theme: DefaultTheme;
   toggleTheme(): void;

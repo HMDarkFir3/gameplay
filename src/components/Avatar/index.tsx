@@ -1,5 +1,5 @@
 //React
-import React, { useContext, ReactNode } from "react";
+import React, { useContext } from "react";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";

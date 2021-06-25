@@ -4,9 +4,6 @@ import styled from "styled-components/native";
 //react-native-iphone-x-helper
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
-//Fonts
-import fonts from "../../global/fonts";
-
 export const Header = styled.View`
   flex-direction: row;
   align-items: center;

@@ -20,6 +20,8 @@ export const Container = styled(TouchableOpacity)`
 export const Content = styled.View`
   flex: 1;
   justify-content: center;
+
+  margin-left: 20px;
 `;
 
 export const Title = styled.Text`

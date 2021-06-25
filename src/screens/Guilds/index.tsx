@@ -1,9 +1,6 @@
 //React
 import React, { useContext } from "react";
-import { StatusBar, FlatList, View } from "react-native";
-
-//React Navigation
-import { useNavigation } from "@react-navigation/native";
+import { StatusBar, FlatList } from "react-native";
 
 //Components
 import Guild from "../../components/Guild";
@@ -26,13 +23,11 @@ export default function Guilds(props: Props) {
 
   const { theme } = useContext(ThemeContext);
 
-  const navigation = useNavigation();
-
   const guilds = [
     {
       id: "1",
       name: "Lendários",
-      icon: null,
+      icon: "image.png",
       owner: true,
     },
     {

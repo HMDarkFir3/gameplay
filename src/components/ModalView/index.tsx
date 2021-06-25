@@ -1,11 +1,6 @@
 //React
-import React, { useContext, ReactNode } from "react";
-import {
-  StatusBar,
-  Modal,
-  ModalProps,
-  TouchableWithoutFeedback,
-} from "react-native";
+import React, { ReactNode } from "react";
+import { Modal, ModalProps, TouchableWithoutFeedback } from "react-native";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
@@ -32,7 +27,12 @@ export default function ModalView(props: Props) {
   }
 
   return (
-    <Modal transparent={true} animationType="slide" {...rest}>
+    <Modal
+      transparent={true}
+      animationType="slide"
+      {...rest}
+      statusBarTranslucent={true}
+    >
       <TouchableWithoutFeedback onPress={closeModal}>
         <Overlay>
           <Container>

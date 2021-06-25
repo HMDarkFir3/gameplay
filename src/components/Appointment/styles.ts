@@ -1,6 +1,9 @@
 //styled-components
 import styled from "styled-components/native";
 
+//Expo
+import { LinearGradient } from "expo-linear-gradient";
+
 //Fonts
 import fonts from "../../global/fonts";
 
@@ -14,6 +17,18 @@ export const Container = styled.View`
   align-self: center;
 
   width: 100%;
+`;
+
+export const GuildIconContainer = styled(LinearGradient)`
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 68px;
+
+  margin-right: 24px;
+
+  border-radius: 8px;
 `;
 
 export const Content = styled.View`
