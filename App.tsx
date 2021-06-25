@@ -14,6 +14,7 @@ import {
 } from "@expo-google-fonts/rajdhani";
 
 //Contexts
+import AuthProvider from "./src/contexts/AuthContext";
 import ThemesProvider from "./src/contexts/ThemeContext";
 
 //Components
@@ -35,10 +36,12 @@ export default function App() {
   }
 
   return (
-    <ThemesProvider>
-      <Background>
-        <Routes />
-      </Background>
-    </ThemesProvider>
+    <AuthProvider>
+      <ThemesProvider>
+        <Background>
+          <Routes />
+        </Background>
+      </ThemesProvider>
+    </AuthProvider>
   );
 }
