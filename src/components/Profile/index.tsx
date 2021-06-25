@@ -14,12 +14,12 @@ import messageRandom from "../../utils/messageRandom";
 //Styles
 import { Container, UserView, Greeting, UserName, Message } from "./styles";
 
+const messageLength = messageRandom.length;
+const messageNumberRandom = Math.floor(Math.random() * messageLength);
+const message = messageRandom[messageNumberRandom];
+
 export default function Profile() {
   const { user } = useAuth();
-
-  const messageLength = messageRandom.length;
-  const messageNumberRandom = Math.floor(Math.random() * messageLength);
-  const message = messageRandom[messageNumberRandom];
 
   return (
     <Container>

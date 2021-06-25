@@ -21,7 +21,7 @@ import ButtonDiscord from "../../components/ButtonDiscord";
 import { Banner, BannerContent, Title, Subtitle, ButtonArea } from "./styles";
 
 //Images
-import BannerImg from "../../assets/images/banner.png";
+import BannerImg from "../../assets/images/png/banner.png";
 
 //Icons
 import { Fontisto } from "@expo/vector-icons";

@@ -20,7 +20,7 @@ import {
 } from "./styles";
 
 //Image
-import IllustrationImg from "../../assets/images/yasuo.png";
+import YasuoImg from "../../assets/images/png/yasuo.png";
 
 export default function SignIn() {
   const { loading, signIn } = useAuth();
@@ -43,7 +43,7 @@ export default function SignIn() {
       />
 
       <Container>
-        <IllustrationImage source={IllustrationImg} resizeMode="contain" />
+        <IllustrationImage source={YasuoImg} resizeMode="contain" />
 
         <Content>
           <Title>

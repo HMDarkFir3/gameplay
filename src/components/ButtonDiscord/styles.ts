@@ -4,6 +4,8 @@ import styled from "styled-components/native";
 //react-native-gesture-handler
 import { RectButton } from "react-native-gesture-handler";
 
+import { SvgProps } from "react-native-svg";
+
 //Fonts
 import fonts from "../../global/fonts";
 
@@ -28,11 +30,6 @@ export const IconWrapper = styled.View`
 
   border-right-width: 1px;
   border-color: ${(props) => props.theme.colors.line};
-`;
-
-export const DiscordImage = styled.Image`
-  width: 24px;
-  height: 18px;
 `;
 
 export const Title = styled.Text`

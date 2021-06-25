@@ -1,8 +1,8 @@
 //Images
-import RankedSvg from "../assets/images/ranked.svg";
-import DuelSvg from "../assets/images/duel.svg";
-import FunSvg from "../assets/images/fun.svg";
-import TrainingSvg from "../assets/images/training.svg";
+import RankedSvg from "../assets/images/svg/ranked.svg";
+import DuelSvg from "../assets/images/svg/duel.svg";
+import FunSvg from "../assets/images/svg/fun.svg";
+import TrainingSvg from "../assets/images/svg/training.svg";
 
 const categories = [
   { id: "1", title: "Ranqueada", icon: RankedSvg },
