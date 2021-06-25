@@ -26,6 +26,12 @@ Um aplicativo de agendamento de partidas de e-sports com seus amigos.
 
 ---
 
+## 🎉 Melhorias na Aplicação
+
+    -Adicionado mensagens randômicas na tela Home;
+    
+---
+
 ## 📂 Como rodar este projeto
 
 Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com), [NodeJs](https://nodejs.org/en/) e [Android Studio](https://developer.android.com/studio) Instalado em seu computador.
