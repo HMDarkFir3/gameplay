@@ -103,6 +103,7 @@ export default function AppointmentDetails() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Member data={item} />}
         ItemSeparatorComponent={() => <ListDivider />}
+        showsVerticalScrollIndicator={false}
       />
 
       <ButtonArea>

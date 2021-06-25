@@ -57,6 +57,8 @@ export const Checked = styled.View<Props>`
 `;
 
 export const Title = styled.Text`
+  margin-top: 15px;
+
   font-family: ${fonts.RajdhaniBold};
   font-size: 15px;
   color: ${(props) => props.theme.colors.heading};

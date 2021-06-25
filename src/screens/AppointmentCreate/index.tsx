@@ -51,6 +51,10 @@ export default function AppointmentCreate() {
     }
   }
 
+  function openModalGuilds() {
+    navigation.navigate("Guilds");
+  }
+
   return (
     <Background>
       <Container behavior={Platform.OS === "ios" ? "padding" : "height"}>
@@ -72,7 +76,7 @@ export default function AppointmentCreate() {
           />
 
           <Form>
-            <RectButton>
+            <RectButton onPress={openModalGuilds}>
               <Select>
                 {
                   <GuildIcon />
