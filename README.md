@@ -56,6 +56,18 @@ $ yarn install
 $ expo start
 ```
 
+### 📁 Configuração .ENV
+
+```bash
+#adicionado .env.example no projeto, lembrar de adicionar as variáveis de ambiente conforme o exemplo
+
+REDIRECT_URI=
+SCOPE=
+RESPONSE_TYPE=
+CLIENT_ID=
+CDN_IMAGE=
+```
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
