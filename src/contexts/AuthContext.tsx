@@ -1,5 +1,8 @@
 //React
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
+
+//AsyncStorage
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //Expo
 import * as AuthSession from "expo-auth-session";
@@ -13,6 +16,9 @@ const { SCOPE } = process.env;
 const { RESPONSE_TYPE } = process.env;
 const { CLIENT_ID } = process.env;
 const { CDN_IMAGE } = process.env;
+
+//Storage
+import { COLLECTION_USERS, COLLECTION_APPOINTMENTS } from "../configs/storage";
 
 //Types
 type AuthContextData = {
@@ -47,6 +53,10 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    loadUser();
+  }, []);
+
   async function signIn() {
     try {
       setLoading(true);
@@ -62,15 +72,33 @@ export default function AuthProvider({ children }: AuthProviderProps) {
         const userInfo = await api.get("/users/@me");
 
         const firstName = userInfo.data.username.split(" ")[0];
-
         userInfo.data.avatar = `${CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`;
 
-        setUser({ ...userInfo.data, firstName, token: params.access_token });
+        const userData = {
+          ...userInfo.data,
+          firstName,
+          token: params.access_token,
+        };
+
+        await AsyncStorage.setItem(COLLECTION_USERS, JSON.stringify(userData));
+
+        setUser(userData);
       }
     } catch {
       throw new Error("Não foi possível autenticar");
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function loadUser() {
+    const storage = await AsyncStorage.getItem(COLLECTION_USERS);
+
+    if (storage) {
+      const userLogged = JSON.parse(storage) as User;
+      api.defaults.headers.authorization = `Bearer ${userLogged.token}`;
+
+      setUser(userLogged);
     }
   }
 
