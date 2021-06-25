@@ -1,10 +1,15 @@
 //styled-components
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+//Types
+type Props = {
+  width: number;
+};
+
+export const Container = styled.View<Props>`
   align-self: flex-end;
 
-  width: 75%;
+  width: ${(props) => props.width + "%"};
   height: 1px;
 
   margin-top: 2px;

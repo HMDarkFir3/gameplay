@@ -133,14 +133,15 @@ export default function Home() {
       </Content>
 
       <FlatList
-        style={{ marginTop: 10, marginBottom: 24, marginLeft: 24 }}
+        style={{ marginTop: 10, marginLeft: 24 }}
         data={appointments}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Appointment data={item} onPress={navigateToAppointmentDetails} />
         )}
         showsVerticalScrollIndicator={true}
-        ItemSeparatorComponent={() => <ListDivider />}
+        ItemSeparatorComponent={() => <ListDivider width={75.5} />}
+        contentContainerStyle={{ paddingBottom: 50 }}
       />
     </Background>
   );

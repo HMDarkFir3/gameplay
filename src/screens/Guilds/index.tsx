@@ -35,6 +35,30 @@ export default function Guilds(props: Props) {
       icon: null,
       owner: true,
     },
+    {
+      id: "2",
+      name: "Lendários",
+      icon: null,
+      owner: true,
+    },
+    {
+      id: "3",
+      name: "Lendários",
+      icon: null,
+      owner: true,
+    },
+    {
+      id: "4",
+      name: "Lendários",
+      icon: null,
+      owner: true,
+    },
+    {
+      id: "5",
+      name: "Lendários",
+      icon: null,
+      owner: true,
+    },
   ];
 
   return (
@@ -52,8 +76,10 @@ export default function Guilds(props: Props) {
         renderItem={({ item }) => (
           <Guild data={item} onPress={() => handleGuildSelected(item)} />
         )}
-        ItemSeparatorComponent={() => <ListDivider />}
+        ListHeaderComponent={() => <ListDivider width={71} />}
+        ItemSeparatorComponent={() => <ListDivider width={71} />}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingTop: 103, paddingBottom: 50 }}
       />
     </Container>
   );

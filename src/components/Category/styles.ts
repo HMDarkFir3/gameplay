@@ -44,15 +44,15 @@ export const Checked = styled.View<Props>`
   top: 7px;
   right: 7px;
 
-  width: ${(props) => (props.isChecked === true ? 10 : 10)}px;
-  height: ${(props) => (props.isChecked === true ? 10 : 10)}px;
+  width: ${(props) => (props.isChecked === true ? 10 : 10) + "px"};
+  height: ${(props) => (props.isChecked === true ? 10 : 10) + "px"};
 
   background-color: ${(props) =>
     props.isChecked === true
       ? props.theme.colors.primary
       : props.theme.colors.secondary100};
   border-radius: 4px;
-  border-width: ${(props) => (props.isChecked === true ? 0 : 2)}px;
+  border-width: ${(props) => (props.isChecked === true ? 0 : 2) + "px"};
   border-color: ${(props) => props.theme.colors.secondary50};
 `;
 

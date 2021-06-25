@@ -17,7 +17,7 @@ export const Container = styled(LinearGradient)`
   width: 100%;
   height: 104px;
 
-  padding-top: ${getStatusBarHeight()}px;
+  padding-top: ${getStatusBarHeight() + "px"};
   padding-left: 24px;
   padding-right: 24px;
 `;
