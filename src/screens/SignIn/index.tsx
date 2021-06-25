@@ -1,11 +1,9 @@
 //React
 import React from "react";
-import { StatusBar } from "react-native";
-
-//React Navigation
-import { useNavigation } from "@react-navigation/native";
+import { StatusBar, Alert } from "react-native";
 
 //Hooks
+import { useAuth } from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/useTheme";
 
 //Components
@@ -25,12 +23,15 @@ import {
 import IllustrationImg from "../../assets/images/yasuo.png";
 
 export default function SignIn() {
+  const { signIn } = useAuth();
   const { theme } = useTheme();
 
-  const navigation = useNavigation();
-
-  function navigateToHome() {
-    navigation.navigate("Home");
+  async function handleSignIn() {
+    try {
+      await signIn();
+    } catch (error) {
+      Alert.alert(error);
+    }
   }
 
   return (
@@ -55,7 +56,7 @@ export default function SignIn() {
             favoritos com seus amigos
           </SubTitle>
 
-          <ButtonDiscord title="Entrar com Discord" onPress={navigateToHome} />
+          <ButtonDiscord title="Entrar com Discord" onPress={handleSignIn} />
         </Content>
       </Container>
     </Background>

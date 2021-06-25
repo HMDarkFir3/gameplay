@@ -1,6 +1,7 @@
 //React
 import "react-native-gesture-handler";
 import React from "react";
+import { LogBox } from "react-native";
 
 //Expo
 import AppLoading from "expo-app-loading";
@@ -22,6 +23,10 @@ import Background from "./src/components/Background";
 
 //Routes
 import Routes from "./src/routes";
+
+LogBox.ignoreLogs([
+  "You are not currently signed in to Expo on your development machine.",
+]);
 
 export default function App() {
   let [fontsLoaded] = useFonts({
