@@ -70,7 +70,7 @@ export default function Appointment(props: Props) {
 
           <Footer>
             <DateInfo>
-              <Feather name="calendar" color="#ffffff" size={17} />
+              <Feather name="calendar" color={theme.colors.primary} size={17} />
               <DateText>{data.date}</DateText>
             </DateInfo>
 

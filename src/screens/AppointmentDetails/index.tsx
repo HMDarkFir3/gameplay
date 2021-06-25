@@ -1,10 +1,9 @@
 //React
 import React from "react";
 import { StatusBar, FlatList } from "react-native";
-import { BorderlessButton } from "react-native-gesture-handler";
 
-//React Navigation
-import { useNavigation } from "@react-navigation/native";
+//react-native-gesture-handler
+import { BorderlessButton } from "react-native-gesture-handler";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -36,8 +35,6 @@ export type MemberProps = {
 export default function AppointmentDetails() {
   const { theme } = useTheme();
 
-  const navigation = useNavigation();
-
   const members = [
     {
       id: "1",
@@ -51,23 +48,7 @@ export default function AppointmentDetails() {
       avatar_url: "https://github.com/rodrigorgtic.png",
       status: "offline",
     },
-    {
-      id: "3",
-      username: "Rodrigo",
-      avatar_url: "https://github.com/rodrigorgtic.png",
-      status: "offline",
-    },
-    {
-      id: "4",
-      username: "Rodrigo",
-      avatar_url: "https://github.com/rodrigorgtic.png",
-      status: "offline",
-    },
   ];
-
-  function navigateToHome() {
-    navigation.navigate("Home");
-  }
 
   return (
     <Background>
@@ -102,7 +83,9 @@ export default function AppointmentDetails() {
         data={members}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Member data={item} />}
-        ItemSeparatorComponent={() => <ListDivider width={80} />}
+        ItemSeparatorComponent={() => (
+          <ListDivider width={80} isCentered={true} />
+        )}
         showsVerticalScrollIndicator={false}
       />
 

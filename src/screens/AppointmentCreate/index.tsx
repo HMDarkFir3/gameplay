@@ -1,6 +1,8 @@
 //React
 import React, { useState } from "react";
 import { StatusBar, View, ScrollView, Platform } from "react-native";
+
+//react-native-gesture-handler
 import { RectButton } from "react-native-gesture-handler";
 
 //Hooks
