@@ -9,6 +9,9 @@ import { useNavigation } from "@react-navigation/native";
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
 
+//Screens
+import Guilds from "../Guilds";
+
 //Components
 import Background from "../../components/Background";
 import Header from "../../components/Header";
@@ -17,6 +20,7 @@ import GuildIcon from "../../components/GuildIcon";
 import SmallInput from "../../components/SmallInput";
 import TextArea from "../../components/TextArea";
 import Button from "../../components/Button";
+import ModalView from "../../components/ModalView";
 
 //Styles
 import {
@@ -36,10 +40,15 @@ import {
 //Icons
 import { Feather } from "@expo/vector-icons";
 
+//Types
+import { GuildProps } from "../../components/Guild";
+
 export default function AppointmentCreate() {
   const { theme } = useContext(ThemeContext);
 
   const [category, setCategory] = useState("");
+  const [open, setOpen] = useState(false);
+  const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
   const navigation = useNavigation();
 
@@ -51,8 +60,13 @@ export default function AppointmentCreate() {
     }
   }
 
-  function openModalGuilds() {
-    navigation.navigate("Guilds");
+  function openModal() {
+    setOpen(true);
+  }
+
+  function handleGuildSelect(guildSelect: GuildProps) {
+    setGuild(guildSelect);
+    setOpen(false);
   }
 
   return (
@@ -76,7 +90,7 @@ export default function AppointmentCreate() {
           />
 
           <Form>
-            <RectButton onPress={openModalGuilds}>
+            <RectButton onPress={openModal}>
               <Select>
                 {
                   <GuildIcon />
@@ -133,6 +147,9 @@ export default function AppointmentCreate() {
             </Footer>
           </Form>
         </ScrollView>
+        <ModalView visible={open}>
+          <Guilds handleGuildSelected={handleGuildSelect} />
+        </ModalView>
       </Container>
     </Background>
   );

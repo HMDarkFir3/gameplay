@@ -41,7 +41,7 @@ export type AppointmentProps = {
   description: string;
 };
 
-type GuildProps = {
+export type GuildProps = {
   id: string;
   name: string;
   icon?: null;

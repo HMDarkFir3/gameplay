@@ -9,22 +9,24 @@ import { getStatusBarHeight } from "react-native-iphone-x-helper";
 //Fonts
 import fonts from "../../global/fonts";
 
-export const Container = styled.Modal`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-  height: 104px;
-
-  padding-top: ${getStatusBarHeight()}px;
-  padding-left: 24px;
-  padding-right: 24px;
+export const Overlay = styled.View`
+  flex: 1;
+  background-color: ${(props) => props.theme.colors.overlay};
 `;
 
-export const Title = styled.Text`
-  text-align: center;
-  font-family: ${fonts.RajdhaniBold};
-  font-size: 20px;
-  color: ${(props) => props.theme.colors.heading};
+export const Container = styled.View`
+  flex: 1;
+  margin-top: 100px;
+`;
+
+export const Bar = styled.View`
+  align-self: center;
+
+  width: 39px;
+  height: 2px;
+
+  margin-top: 13px;
+
+  background-color: ${(props) => props.theme.colors.secondary30};
+  border-radius: 2px;
 `;

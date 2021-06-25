@@ -15,7 +15,15 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 //Styles
 import { Container } from "./styles";
 
-export default function Guilds() {
+//types
+import { GuildProps } from "../../components/Guild";
+type Props = {
+  handleGuildSelected: (guild: GuildProps) => void;
+};
+
+export default function Guilds(props: Props) {
+  const { handleGuildSelected } = props;
+
   const { theme } = useContext(ThemeContext);
 
   const navigation = useNavigation();
@@ -41,7 +49,9 @@ export default function Guilds() {
         style={{ width: "100%" }}
         data={guilds}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Guild data={item} />}
+        renderItem={({ item }) => (
+          <Guild data={item} onPress={() => handleGuildSelected(item)} />
+        )}
         ItemSeparatorComponent={() => <ListDivider />}
         showsVerticalScrollIndicator={false}
       />

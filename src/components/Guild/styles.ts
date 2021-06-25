@@ -1,13 +1,13 @@
 //styled-components
 import styled from "styled-components/native";
 
-//react-native-gesture-handler
-import { RectButton } from "react-native-gesture-handler";
+//React
+import { TouchableOpacity } from "react-native";
 
 //Fonts
 import fonts from "../../global/fonts";
 
-export const Container = styled(RectButton)`
+export const Container = styled(TouchableOpacity)`
   flex-direction: row;
   align-items: center;
 

@@ -1,7 +1,6 @@
 //React
 import React, { useContext } from "react";
-import { View } from "react-native";
-import { RectButtonProps } from "react-native-gesture-handler";
+import { View, TouchableOpacityProps } from "react-native";
 
 //Contexts
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -16,7 +15,7 @@ import { Container, Content, Title, Type } from "./styles";
 import { Feather } from "@expo/vector-icons";
 
 //Type
-type Props = RectButtonProps & {
+type Props = TouchableOpacityProps & {
   data: GuildProps;
 };
 
@@ -33,7 +32,7 @@ export default function Guild(props: Props) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Container {...rest}>
+    <Container activeOpacity={0.7} {...rest}>
       <GuildIcon />
 
       <Content>
@@ -41,9 +40,8 @@ export default function Guild(props: Props) {
           <Title>{data.name}</Title>
           <Type>{data.owner ? "Administrador" : "Convidado"}</Type>
         </View>
-
-        <Feather name="chevron-right" color={theme.colors.heading} size={18} />
       </Content>
+      <Feather name="chevron-right" color={theme.colors.heading} size={18} />
     </Container>
   );
 }

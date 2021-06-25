@@ -1,18 +1,23 @@
 //React
 import React, { useContext, ReactNode } from "react";
-import { View } from "react-native";
+import { StatusBar, Modal, ModalProps } from "react-native";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
 
-//Contexts
-import { ThemeContext } from "../../contexts/ThemeContext";
+//Components
+import Background from "../Background";
 
 //Styles
-import { Container, Title } from "./styles";
+import { Overlay, Container, Bar } from "./styles";
 
-export default function ModalView() {
-  const { theme } = useContext(ThemeContext);
+//Type
+type Props = ModalProps & {
+  children: ReactNode;
+};
+
+export default function ModalView(props: Props) {
+  const { children, ...rest } = props;
 
   const navigation = useNavigation();
 
@@ -20,5 +25,16 @@ export default function ModalView() {
     navigation.goBack();
   }
 
-  return <Container></Container>;
+  return (
+    <Modal transparent={true} animationType="slide" {...rest}>
+      <Overlay>
+        <Container>
+          <Background>
+            <Bar />
+            {children}
+          </Background>
+        </Container>
+      </Overlay>
+    </Modal>
+  );
 }
