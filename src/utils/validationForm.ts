@@ -1,7 +1,9 @@
+//React
 import { Alert } from "react-native";
 
 export function validationForm(
   category: string,
+  guild: string,
   day: string,
   month: string,
   hour: string,
@@ -10,6 +12,11 @@ export function validationForm(
 ) {
   if (category === "") {
     Alert.alert("Selecione uma categoria.");
+    return;
+  }
+
+  if (guild === undefined) {
+    Alert.alert("Selecione um servidor.");
     return;
   }
 

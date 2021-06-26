@@ -22,7 +22,7 @@ import ListDivider from "../../components/ListDivider";
 import Load from "../../components/Load";
 
 //Storage
-import { COLLECTION_APPOINTMENTS } from "../../configs/storage";
+import { COLLECTION_APPOINTMENTS } from "../../storages/storage";
 
 //Styles
 import { Header, Content } from "./styles";

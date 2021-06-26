@@ -18,7 +18,7 @@ const { CLIENT_ID } = process.env;
 const { CDN_IMAGE } = process.env;
 
 //Storage
-import { COLLECTION_USERS, COLLECTION_APPOINTMENTS } from "../configs/storage";
+import { COLLECTION_USERS, COLLECTION_APPOINTMENTS } from "../storages/storage";
 
 //Types
 type AuthContextData = {

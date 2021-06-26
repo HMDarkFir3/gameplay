@@ -18,7 +18,7 @@ import uuid from "react-native-uuid";
 import { useTheme } from "../../hooks/useTheme";
 
 //Storage
-import { COLLECTION_APPOINTMENTS } from "../../configs/storage";
+import { COLLECTION_APPOINTMENTS } from "../../storages/storage";
 
 //Utils
 import { validationForm } from "../../utils/validationForm";
@@ -90,8 +90,11 @@ export default function AppointmentCreate() {
   }
 
   async function handleSubmit() {
+    console.log(guild.owner);
+
     const done = validationForm(
       category,
+      guild.name,
       day,
       month,
       hour,
