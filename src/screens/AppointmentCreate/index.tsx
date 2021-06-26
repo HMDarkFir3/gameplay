@@ -219,7 +219,7 @@ export default function AppointmentCreate() {
             </Footer>
           </Form>
         </ScrollView>
-        <ModalView visible={open} closeModal={closeModalGuild}>
+        <ModalView visible={open} closeModal={closeModalGuild} marginView={100}>
           <Guilds handleGuildSelected={handleGuildSelect} />
         </ModalView>
       </Container>

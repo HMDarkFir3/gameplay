@@ -1,14 +1,19 @@
 //styled-components
 import styled from "styled-components/native";
 
+//Types
+type Props = {
+  marginView: number;
+};
+
 export const Overlay = styled.View`
   flex: 1;
   background-color: ${(props) => props.theme.colors.overlay};
 `;
 
-export const Container = styled.View`
+export const Container = styled.View<Props>`
   flex: 1;
-  margin-top: 100px;
+  margin-top: ${(props) => props.marginView + "px"};
 `;
 
 export const Bar = styled.View`

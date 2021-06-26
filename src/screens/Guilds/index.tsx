@@ -1,6 +1,6 @@
 //React
 import React, { useState, useEffect } from "react";
-import { StatusBar, FlatList } from "react-native";
+import { FlatList } from "react-native";
 
 //Components
 import Guild from "../../components/Guild";
@@ -9,9 +9,6 @@ import Load from "../../components/Load";
 
 //Services
 import { api } from "../../services/api";
-
-//Hooks
-import { useTheme } from "../../hooks/useTheme";
 
 //Styles
 import { Container } from "./styles";
@@ -29,8 +26,6 @@ export default function Guilds(props: Props) {
   const [guilds, setGuilds] = useState<GuildProps[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const { theme } = useTheme();
-
   useEffect(() => {
     fetchGuilds();
   }, []);
@@ -44,12 +39,6 @@ export default function Guilds(props: Props) {
 
   return (
     <Container>
-      <StatusBar
-        barStyle={theme.title === "light" ? "dark-content" : "light-content"}
-        backgroundColor="transparent"
-        translucent={true}
-      />
-
       {loading ? (
         <Load />
       ) : (

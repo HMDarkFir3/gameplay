@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { StatusBar, FlatList, Alert, Share, Platform } from "react-native";
 
-//AsyncStorage
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
 //React Navigation
 import { useRoute } from "@react-navigation/native";
 
 //react-native-gesture-handler
 import { BorderlessButton } from "react-native-gesture-handler";
+
+//Expo
+import * as Linking from "expo-linking";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -91,6 +91,10 @@ export default function AppointmentDetails() {
     }
   }
 
+  function handleOpenGuild() {
+    Linking.openURL(widget.instant_invite);
+  }
+
   useEffect(() => {
     fetchGuildWidget();
   }, []);
@@ -143,9 +147,11 @@ export default function AppointmentDetails() {
         </>
       )}
 
-      <ButtonArea>
-        <ButtonDiscord title="Entrar na partida" />
-      </ButtonArea>
+      {guildSelected.guild.owner && (
+        <ButtonArea>
+          <ButtonDiscord title="Entrar na partida" onPress={handleOpenGuild} />
+        </ButtonArea>
+      )}
     </Background>
   );
 }

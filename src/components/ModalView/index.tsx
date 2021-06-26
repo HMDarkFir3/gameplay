@@ -14,11 +14,12 @@ import { Overlay, Container, Bar } from "./styles";
 //Type
 type Props = ModalProps & {
   children: ReactNode;
+  marginView: number;
   closeModal: () => void;
 };
 
 export default function ModalView(props: Props) {
-  const { children, closeModal, ...rest } = props;
+  const { children, marginView, closeModal, ...rest } = props;
 
   const navigation = useNavigation();
 
@@ -35,7 +36,7 @@ export default function ModalView(props: Props) {
     >
       <TouchableWithoutFeedback onPress={closeModal}>
         <Overlay>
-          <Container>
+          <Container marginView={marginView}>
             <Background>
               <Bar />
               {children}

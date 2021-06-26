@@ -65,7 +65,7 @@ export default function Appointment(props: Props) {
         <Content>
           <Header>
             <Title>{data.guild.name}</Title>
-            <Category></Category>
+            <Category>{category.title}</Category>
           </Header>
 
           <Footer>
