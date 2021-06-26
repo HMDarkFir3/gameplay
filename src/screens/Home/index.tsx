@@ -94,7 +94,7 @@ export default function Home() {
             true: theme.colors.secondary70,
           }}
           thumbColor={
-            isEnabled ? theme.colors.secondary50 : theme.colors.secondary30
+            isEnabled ? theme.colors.secondary50 : theme.colors.secondary70
           }
           onValueChange={toggleTheme}
           value={isEnabled}
