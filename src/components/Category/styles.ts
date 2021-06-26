@@ -22,6 +22,8 @@ export const Container = styled(LinearGradient)`
   margin-right: 8px;
 
   border-radius: 8px;
+
+  box-shadow: 10px 5px 5px black;
 `;
 
 export const Content = styled(LinearGradient)<Props>`
@@ -50,10 +52,10 @@ export const Checked = styled.View<Props>`
   background-color: ${(props) =>
     props.isChecked === true
       ? props.theme.colors.primary
-      : props.theme.colors.secondary100};
+      : props.theme.title === "dark"
+      ? "#0A1033"
+      : "#bdbdbd"};
   border-radius: 4px;
-  border-width: ${(props) => (props.isChecked === true ? 0 : 2) + "px"};
-  border-color: ${(props) => props.theme.colors.secondary50};
 `;
 
 export const Title = styled.Text`

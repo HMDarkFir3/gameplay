@@ -34,11 +34,22 @@ export default function Category(props: Props) {
 
   return (
     <RectButton {...rest}>
-      <Container colors={[theme.colors.secondary50, theme.colors.secondary70]}>
+      <Container
+        colors={[
+          theme.title === "dark" ? "#243189" : "#757575",
+          theme.title === "dark" ? "#1B2565" : "#eeeeee",
+        ]}
+      >
         <Content
           colors={[
-            isChecked ? theme.colors.secondary85 : theme.colors.secondary50,
-            theme.colors.secondary40,
+            isChecked
+              ? theme.title === "dark"
+                ? "#171f52"
+                : "#eeeeee"
+              : theme.title === "dark"
+              ? "#243189"
+              : "#757575",
+            theme.title === "dark" ? "#1B2565" : "#eeeeee",
           ]}
           isChecked={isChecked}
         >

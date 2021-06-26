@@ -102,7 +102,7 @@ export function validationForm(
     return;
 
     //Validando a hora menor que a atual e dia menor ou igual ao atual
-  } else if (parseInt(hour) < validatedHour && parseInt(day) <= validatedDay) {
+  } else if (parseInt(hour) < validatedHour && parseInt(day) < validatedDay) {
     Alert.alert("Digite uma hora válida");
     return;
 
@@ -120,7 +120,7 @@ export function validationForm(
     //Validando o minuto menor que o atual e dia menor ou igual ao atual
   } else if (
     parseInt(minute) < validatedMinute &&
-    parseInt(day) <= validatedDay
+    parseInt(day) === validatedDay
   ) {
     Alert.alert("Digite um minuto válido");
     return;

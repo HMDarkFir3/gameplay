@@ -1,6 +1,6 @@
 //React
 import React, { useState, useCallback } from "react";
-import { StatusBar, FlatList } from "react-native";
+import { StatusBar, FlatList, Switch } from "react-native";
 
 //AsyncStorage
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -25,13 +25,13 @@ import Load from "../../components/Load";
 import { COLLECTION_APPOINTMENTS } from "../../storages/storage";
 
 //Styles
-import { Header, Content } from "./styles";
+import { Header, ContainerSwitch, SwitchTitle, Content } from "./styles";
 
 //Types
 import { AppointmentProps } from "../../components/Appointment";
 
 export default function Home() {
-  const { theme } = useTheme();
+  const { theme, isEnabled, toggleTheme } = useTheme();
 
   const [category, setCategory] = useState("");
   const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
@@ -86,6 +86,11 @@ export default function Home() {
         <Profile />
         <ButtonAdd onPress={navigateToAppointmentCreate} />
       </Header>
+
+      <ContainerSwitch>
+        <Switch onValueChange={toggleTheme} value={isEnabled} />
+        <SwitchTitle>{theme.title === "dark" ? "Escuro" : "Claro"}</SwitchTitle>
+      </ContainerSwitch>
 
       <CategorySelect
         categorySelect={category}
