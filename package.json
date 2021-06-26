@@ -17,6 +17,7 @@
     "@types/styled-components": "^5.1.10",
     "axios": "^0.21.1",
     "babel-plugin-inline-dotenv": "^1.6.0",
+    "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
     "expo": "~41.0.1",
     "expo-app-loading": "^1.0.3",

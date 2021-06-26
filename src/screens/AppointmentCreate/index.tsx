@@ -14,6 +14,9 @@ import { RectButton } from "react-native-gesture-handler";
 //react-native-uuid
 import uuid from "react-native-uuid";
 
+//date-fns
+import { getDay } from "date-fns";
+
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
 
@@ -90,7 +93,8 @@ export default function AppointmentCreate() {
   }
 
   async function handleSubmit() {
-    console.log(guild.owner);
+    const today = new Date();
+    const dia = String(today.getDate()).padStart(2, "0");
 
     const done = validationForm(
       category,
@@ -107,7 +111,9 @@ export default function AppointmentCreate() {
         id: uuid.v4(),
         guild,
         category,
-        date: `${day}/${month} às ${hour}:${minute}h`,
+        date: `${day.length === 1 ? "0" + day : day}/${
+          month.length === 1 ? "0" + month : month
+        } às ${hour}:${minute}h`,
         description: description,
       };
 
