@@ -88,8 +88,20 @@ export default function Home() {
       </Header>
 
       <ContainerSwitch>
-        <Switch onValueChange={toggleTheme} value={isEnabled} />
-        <SwitchTitle>{theme.title === "dark" ? "Escuro" : "Claro"}</SwitchTitle>
+        <Switch
+          trackColor={{
+            false: theme.colors.secondary50,
+            true: theme.colors.secondary70,
+          }}
+          thumbColor={
+            isEnabled ? theme.colors.secondary50 : theme.colors.secondary30
+          }
+          onValueChange={toggleTheme}
+          value={isEnabled}
+        />
+        <SwitchTitle>
+          Tema {theme.title === "dark" ? "Escuro" : "Claro"}
+        </SwitchTitle>
       </ContainerSwitch>
 
       <CategorySelect
