@@ -31,6 +31,7 @@ Um aplicativo de agendamento de partidas de e-sports com seus amigos.
     - Adicionado estilo com styled-components;
     - Adicionado mensagens randômicas na tela Home;
     - Adicionado modal com a tela Logout;
+    - Adicionado validação para campos vazios no formulário;
     
 ---
 
