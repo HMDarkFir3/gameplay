@@ -1,13 +1,13 @@
 //styled-components
 import styled from "styled-components/native";
 
-//React
-import { TextInput } from "react-native";
+//react-native-masked-text
+import { TextInputMask } from "react-native-masked-text";
 
 //Fonts
 import fonts from "../../global/fonts";
 
-export const Input = styled(TextInput)`
+export const Input = styled(TextInputMask)`
   width: 48px;
   height: 48px;
 

@@ -1,15 +1,27 @@
 //React
 import React from "react";
-import { TextInputProps } from "react-native";
+
+//react-native-masked-text
+import { TextInputMaskProps } from "react-native-masked-text";
 
 //Styles
 import { Input } from "./styles";
 
 //Types
-type Props = TextInputProps;
+type Props = TextInputMaskProps & {
+  type: string;
+};
 
 export default function SmallInput(props: Props) {
-  const { ...rest } = props;
+  const { type, ...rest } = props;
 
-  return <Input {...rest} keyboardType="numeric" />;
+  return (
+    <Input
+      type={type}
+      options={{ mask: "99" }}
+      {...rest}
+      keyboardType="numeric"
+      maxLength={2}
+    />
+  );
 }

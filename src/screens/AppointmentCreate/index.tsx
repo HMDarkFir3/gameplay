@@ -177,13 +177,13 @@ export default function AppointmentCreate() {
                 <Label>Dia e mês</Label>
                 <Column>
                   <SmallInput
-                    maxLength={2}
+                    type="custom"
                     onChangeText={(t) => setDay(t)}
                     value={day}
                   />
                   <Divider>/</Divider>
                   <SmallInput
-                    maxLength={2}
+                    type="custom"
                     onChangeText={(t) => setMonth(t)}
                     value={month}
                   />
@@ -194,13 +194,13 @@ export default function AppointmentCreate() {
                 <Label>Hora e minuto</Label>
                 <Column>
                   <SmallInput
-                    maxLength={2}
+                    type="custom"
                     onChangeText={(t) => setHour(t)}
                     value={hour}
                   />
                   <Divider>:</Divider>
                   <SmallInput
-                    maxLength={2}
+                    type="custom"
                     onChangeText={(t) => setMinute(t)}
                     value={minute}
                   />

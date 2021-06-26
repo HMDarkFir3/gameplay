@@ -10,10 +10,17 @@ export function validationForm(
   minute: string,
   description: string
 ) {
+  //Data e hora atual
   const today = new Date();
+
+  //Pegando somente o dia, mês e ano
   const validatedDay = parseInt(String(today.getDate()));
   const validatedMonth = parseInt(String(today.getMonth() + 1));
-  const validatedYear = today.getFullYear();
+  const validatedYear = parseInt(String(today.getFullYear()));
+
+  //Pegando somente as horas e minutos
+  const validatedHour = parseInt(String(today.getHours()));
+  const validatedMinute = parseInt(String(today.getMinutes()));
 
   //Categoria não selecionada
   if (category === "") {
@@ -31,10 +38,9 @@ export function validationForm(
   if (month === "") {
     Alert.alert("Campo mês em branco.");
     return;
-  }
 
-  //Validando mês menor que o atual e mês maior que 12
-  if (parseInt(month) < validatedMonth || parseInt(month) > 12) {
+    //Validando mês menor que o atual e mês maior que 12
+  } else if (parseInt(month) < validatedMonth || parseInt(month) > 12) {
     Alert.alert("Digite um mês válido.");
     return;
   }
@@ -45,7 +51,10 @@ export function validationForm(
     return;
 
     //Validando dia menor que o atual
-  } else if (parseInt(day) < validatedDay) {
+  } else if (
+    parseInt(day) < validatedDay &&
+    parseInt(month) <= validatedMonth
+  ) {
     Alert.alert("Digite um dia válido.");
     return;
 
@@ -91,16 +100,39 @@ export function validationForm(
   if (hour === "") {
     Alert.alert("Campo hora em branco.");
     return;
+
+    //Validando a hora menor que a atual e dia menor ou igual ao atual
+  } else if (parseInt(hour) < validatedHour && parseInt(day) <= validatedDay) {
+    Alert.alert("Digite uma hora válida");
+    return;
+
+    //Validando hora maior que 23
+  } else if (parseInt(hour) > 23) {
+    Alert.alert("Digite uma hora válida");
+    return;
   }
 
   //Campo minuto em branco
   if (minute === "") {
     Alert.alert("Campo minuto em branco.");
     return;
+
+    //Validando o minuto menor que o atual e dia menor ou igual ao atual
+  } else if (
+    parseInt(minute) < validatedMinute &&
+    parseInt(day) <= validatedDay
+  ) {
+    Alert.alert("Digite um minuto válido");
+    return;
+
+    //Validando minuto maior que 59
+  } else if (parseInt(minute) > 59) {
+    Alert.alert("Digite um minuto válido");
+    return;
   }
 
-  //Campo descrição em branco
   if (description === "") {
+    //Campo descrição em branco
     Alert.alert("Campo descrição em branco.");
     return;
   }
