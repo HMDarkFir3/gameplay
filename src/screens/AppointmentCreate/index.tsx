@@ -92,7 +92,7 @@ export default function AppointmentCreate() {
       return;
     }
 
-    if (guild) {
+    if (guild === null) {
       Alert.alert("Selecione um servidor.");
       return;
     }

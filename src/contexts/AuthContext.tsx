@@ -53,10 +53,6 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    loadUser();
-  }, []);
-
   async function signIn() {
     try {
       setLoading(true);
@@ -101,6 +97,10 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       setUser(userLogged);
     }
   }
+
+  useEffect(() => {
+    loadUser();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, loading, signIn }}>

@@ -1,9 +1,12 @@
 //React
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { StatusBar, FlatList } from "react-native";
 
+//AsyncStorage
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 //React Navigation
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -16,45 +19,25 @@ import CategorySelect from "../../components/CategorySelect";
 import ListHeader from "../../components/ListHeader";
 import Appointment from "../../components/Appointment";
 import ListDivider from "../../components/ListDivider";
+import Load from "../../components/Load";
+
+//Storage
+import { COLLECTION_APPOINTMENTS } from "../../configs/storage";
 
 //Styles
 import { Header, Content } from "./styles";
+
+//Types
+import { AppointmentProps } from "../../components/Appointment";
 
 export default function Home() {
   const { theme } = useTheme();
 
   const [category, setCategory] = useState("");
+  const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const navigation = useNavigation();
-
-  const appointments = [
-    {
-      id: "1",
-      guild: {
-        id: "1",
-        name: "Lendários",
-        icon: null,
-        owner: true,
-      },
-      category: "1",
-      date: "22/06 às 20:40h",
-      description:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10",
-    },
-    {
-      id: "2",
-      guild: {
-        id: "2",
-        name: "Lendários",
-        icon: null,
-        owner: true,
-      },
-      category: "2",
-      date: "22/06 às 20:40h",
-      description:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10",
-    },
-  ];
 
   function handleCategorySelect(categoryId: string) {
     if (categoryId === category) {
@@ -68,9 +51,29 @@ export default function Home() {
     navigation.navigate("AppointmentCreate");
   }
 
-  function navigateToAppointmentDetails() {
-    navigation.navigate("AppointmentDetails");
+  function handleAppointmentDetails(guildSelected: AppointmentProps) {
+    navigation.navigate("AppointmentDetails", { guildSelected });
   }
+
+  async function loadAppointments() {
+    const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
+
+    const storage: AppointmentProps[] = response ? JSON.parse(response) : [];
+
+    if (category) {
+      setAppointments(storage.filter((item) => item.category === category));
+    } else {
+      setAppointments(storage);
+    }
+
+    setLoading(false);
+  }
+
+  useFocusEffect(
+    useCallback(() => {
+      loadAppointments();
+    }, [category])
+  );
 
   return (
     <Background>
@@ -88,21 +91,33 @@ export default function Home() {
         categorySelect={category}
         setCategory={handleCategorySelect}
       />
-      <Content>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-      </Content>
 
-      <FlatList
-        style={{ marginTop: 10, marginLeft: 24 }}
-        data={appointments}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Appointment data={item} onPress={navigateToAppointmentDetails} />
-        )}
-        showsVerticalScrollIndicator={true}
-        ItemSeparatorComponent={() => <ListDivider width={75.5} />}
-        contentContainerStyle={{ paddingBottom: 50 }}
-      />
+      {loading ? (
+        <Load />
+      ) : (
+        <>
+          <Content>
+            <ListHeader
+              title="Partidas agendadas"
+              subtitle={`Total ${appointments.length}`}
+            />
+          </Content>
+          <FlatList
+            style={{ marginTop: 10, marginLeft: 24 }}
+            data={appointments}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Appointment
+                data={item}
+                onPress={() => handleAppointmentDetails(item)}
+              />
+            )}
+            showsVerticalScrollIndicator={true}
+            ItemSeparatorComponent={() => <ListDivider width={75.5} />}
+            contentContainerStyle={{ paddingBottom: 50 }}
+          />
+        </>
+      )}
     </Background>
   );
 }

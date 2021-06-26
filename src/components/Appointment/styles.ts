@@ -14,7 +14,7 @@ type Props = {
 
 export const Container = styled.View`
   flex-direction: row;
-  align-self: center;
+  align-items: center;
 
   width: 100%;
 `;

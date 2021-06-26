@@ -59,7 +59,7 @@ export default function Appointment(props: Props) {
         <GuildIconContainer
           colors={[theme.colors.secondary50, theme.colors.secondary70]}
         >
-          <GuildIcon />
+          <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
         </GuildIconContainer>
 
         <Content>
