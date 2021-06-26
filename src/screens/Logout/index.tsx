@@ -6,6 +6,7 @@ import { Alert } from "react-native";
 import SmallButton from "../../components/SmallButton";
 
 //Hooks
+import { useAuth } from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/useTheme";
 
 //Styles
@@ -28,9 +29,21 @@ type Props = {
 export default function Logout(props: Props) {
   const { closeModal } = props;
 
+  const { signOut } = useAuth();
   const { theme } = useTheme();
 
-  function signOut() {}
+  function handleSignOut() {
+    Alert.alert("Logout", "Deseja realmente sair do aplicativo?", [
+      {
+        text: "Não",
+        style: "cancel",
+      },
+      {
+        text: "Sim",
+        onPress: () => signOut(),
+      },
+    ]);
+  }
 
   return (
     <Container>
@@ -47,11 +60,12 @@ export default function Logout(props: Props) {
           hasBorder={true}
           onPress={closeModal}
         />
+
         <SmallButton
           title="Sim"
           color={theme.colors.primary}
           hasBorder={false}
-          onPress={signOut}
+          onPress={handleSignOut}
         />
       </ButtonArea>
     </Container>
