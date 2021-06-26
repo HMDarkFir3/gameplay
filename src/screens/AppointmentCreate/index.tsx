@@ -49,6 +49,12 @@ export default function AppointmentCreate() {
   const [open, setOpen] = useState(false);
   const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [hour, setHour] = useState("");
+  const [minute, setMinute] = useState("");
+  const [description, setDescription] = useState("");
+
   function handleCategorySelect(categoryId: string) {
     setCategory(categoryId);
   }
@@ -89,7 +95,11 @@ export default function AppointmentCreate() {
           <Form>
             <RectButton onPress={openModalGuild}>
               <Select>
-                {guild.icon ? <GuildIcon /> : <Image />}
+                {guild.icon ? (
+                  <GuildIcon guildId={guild.id} iconId={guild.icon} />
+                ) : (
+                  <Image />
+                )}
 
                 <SelectBody>
                   <Label>
@@ -108,18 +118,34 @@ export default function AppointmentCreate() {
               <View>
                 <Label>Dia e mês</Label>
                 <Column>
-                  <SmallInput maxLength={2} />
+                  <SmallInput
+                    maxLength={2}
+                    onChangeText={(t) => setDay(t)}
+                    value={day}
+                  />
                   <Divider>/</Divider>
-                  <SmallInput maxLength={2} />
+                  <SmallInput
+                    maxLength={2}
+                    onChangeText={(t) => setMonth(t)}
+                    value={month}
+                  />
                 </Column>
               </View>
 
               <View>
                 <Label>Hora e minuto</Label>
                 <Column>
-                  <SmallInput maxLength={2} />
+                  <SmallInput
+                    maxLength={2}
+                    onChangeText={(t) => setHour(t)}
+                    value={hour}
+                  />
                   <Divider>:</Divider>
-                  <SmallInput maxLength={2} />
+                  <SmallInput
+                    maxLength={2}
+                    onChangeText={(t) => setMinute(t)}
+                    value={minute}
+                  />
                 </Column>
               </View>
             </Field>
@@ -135,6 +161,8 @@ export default function AppointmentCreate() {
               maxLength={100}
               numberOfLines={5}
               autoCorrect={false}
+              onChangeText={(t) => setDescription(t)}
+              value={description}
             />
 
             <Footer>
