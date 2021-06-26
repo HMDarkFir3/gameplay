@@ -1,12 +1,24 @@
 //React
 import React, { useState } from "react";
-import { StatusBar, View, ScrollView, Platform } from "react-native";
+import { StatusBar, View, ScrollView, Platform, Alert } from "react-native";
+
+//React Navigation
+import { useNavigation } from "@react-navigation/native";
+
+//AsyncStorage
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //react-native-gesture-handler
 import { RectButton } from "react-native-gesture-handler";
 
+//react-native-uuid
+import uuid from "react-native-uuid";
+
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
+
+//Storage
+import { COLLECTION_APPOINTMENTS } from "../../configs/storage";
 
 //Screens
 import Guilds from "../Guilds";
@@ -55,6 +67,8 @@ export default function AppointmentCreate() {
   const [minute, setMinute] = useState("");
   const [description, setDescription] = useState("");
 
+  const navigation = useNavigation();
+
   function handleCategorySelect(categoryId: string) {
     setCategory(categoryId);
   }
@@ -70,6 +84,62 @@ export default function AppointmentCreate() {
   function handleGuildSelect(guildSelect: GuildProps) {
     setGuild(guildSelect);
     setOpen(false);
+  }
+
+  async function handleSubmit() {
+    if (category === "") {
+      Alert.alert("Selecione uma categoria.");
+      return;
+    }
+
+    if (guild) {
+      Alert.alert("Selecione um servidor.");
+      return;
+    }
+
+    if (day === "") {
+      Alert.alert("Campo dia em branco.");
+      return;
+    }
+
+    if (month === "") {
+      Alert.alert("Campo mês em branco.");
+      return;
+    }
+
+    if (hour === "") {
+      Alert.alert("Campo hora em branco.");
+      return;
+    }
+
+    if (minute === "") {
+      Alert.alert("Campo minuto em branco.");
+      return;
+    }
+
+    if (description === "") {
+      Alert.alert("Campo descrição em branco.");
+      return;
+    }
+
+    const newAppointment = {
+      id: uuid.v4(),
+      guild,
+      category,
+      date: `${day}/${month} às ${hour}:${minute}h`,
+      description: description,
+    };
+
+    const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
+
+    const appointments = storage ? JSON.parse(storage) : [];
+
+    await AsyncStorage.setItem(
+      COLLECTION_APPOINTMENTS,
+      JSON.stringify([...appointments, newAppointment])
+    );
+
+    navigation.navigate("Home");
   }
 
   return (
@@ -166,7 +236,7 @@ export default function AppointmentCreate() {
             />
 
             <Footer>
-              <Button title="Agendar" />
+              <Button title="Agendar" onPress={handleSubmit} />
             </Footer>
           </Form>
         </ScrollView>
