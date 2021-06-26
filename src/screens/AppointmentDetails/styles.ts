@@ -26,14 +26,14 @@ export const BannerContent = styled.View`
 export const Title = styled.Text`
   font-family: ${fonts.RajdhaniBold};
   font-size: 28px;
-  color: ${(props) => props.theme.colors.heading};
+  color: ${(props) => (props.theme.title === "dark" ? "#DDE3F0" : "#fafafa")};
 `;
 
 export const Subtitle = styled.Text`
   line-height: 21px;
   font-family: ${fonts.InterRegular};
   font-size: 13px;
-  color: ${(props) => props.theme.colors.heading};
+  color: ${(props) => (props.theme.title === "dark" ? "#DDE3F0" : "#fafafa")};
 `;
 
 export const ButtonArea = styled.View`

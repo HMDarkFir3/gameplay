@@ -1,8 +1,14 @@
 //React
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
+
+//AsyncStorage
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //styled-componentes
 import { DefaultTheme, ThemeProvider } from "styled-components";
+
+//Storage
+import { COLLECTION_THEME } from "../storages/storage";
 
 //Styles
 import light from "../global/themes/light";
@@ -25,15 +31,29 @@ export default function ThemesProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(dark);
   const [isEnabled, setIsEnabled] = useState(false);
 
-  function toggleTheme() {
+  async function toggleTheme() {
     if (theme.title === "dark") {
+      await AsyncStorage.setItem(COLLECTION_THEME, light.title);
+
       setTheme(light);
       setIsEnabled((previousState) => !previousState);
     } else {
+      await AsyncStorage.setItem(COLLECTION_THEME, dark.title);
+
       setTheme(dark);
       setIsEnabled((previousState) => !previousState);
     }
   }
+
+  async function loadTheme() {
+    const themeLocal = await AsyncStorage.getItem(COLLECTION_THEME);
+
+    setTheme(themeLocal === "light" ? light : dark);
+  }
+
+  useEffect(() => {
+    loadTheme();
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, isEnabled, toggleTheme }}>
