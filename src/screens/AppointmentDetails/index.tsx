@@ -1,6 +1,6 @@
 //React
 import React, { useState, useEffect } from "react";
-import { StatusBar, FlatList, Alert } from "react-native";
+import { StatusBar, FlatList, Alert, Share, Platform } from "react-native";
 
 //AsyncStorage
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -48,7 +48,6 @@ type GuildWidget = {
   name: string;
   instant_invite: string;
   members: MemberProps[];
-  presence_count: number;
 };
 
 export default function AppointmentDetails() {
@@ -76,6 +75,22 @@ export default function AppointmentDetails() {
     }
   }
 
+  function handleShareInvitation() {
+    try {
+      const message =
+        Platform.OS === "ios"
+          ? `Junte-se a ${guildSelected.guild.name}`
+          : widget.instant_invite;
+
+      Share.share({
+        message,
+        url: widget.instant_invite,
+      });
+    } catch {
+      Alert.alert("Verifique se o instant invite está habilitado");
+    }
+  }
+
   useEffect(() => {
     fetchGuildWidget();
   }, []);
@@ -91,7 +106,7 @@ export default function AppointmentDetails() {
       <Header
         title="Detalhes"
         action={
-          <BorderlessButton>
+          <BorderlessButton onPress={handleShareInvitation}>
             <Fontisto name="share" color={theme.colors.primary} size={24} />
           </BorderlessButton>
         }
@@ -108,7 +123,11 @@ export default function AppointmentDetails() {
         <Load />
       ) : (
         <>
-          <ListHeader title="Jogadores" subtitle="Total 3" />
+          <ListHeader
+            title="Jogadores"
+            subtitle={`Total ${widget.members.length}`}
+          />
+
           <FlatList
             style={{ marginTop: 27, marginLeft: 24 }}
             data={widget.members}

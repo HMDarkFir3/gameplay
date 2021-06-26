@@ -52,6 +52,7 @@ export default function Home() {
   }
 
   function handleAppointmentDetails(guildSelected: AppointmentProps) {
+    console.log(guildSelected);
     navigation.navigate("AppointmentDetails", { guildSelected });
   }
 
