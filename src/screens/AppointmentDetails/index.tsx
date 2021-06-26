@@ -106,9 +106,11 @@ export default function AppointmentDetails() {
       <Header
         title="Detalhes"
         action={
-          <BorderlessButton onPress={handleShareInvitation}>
-            <Fontisto name="share" color={theme.colors.primary} size={24} />
-          </BorderlessButton>
+          guildSelected.guild.owner && (
+            <BorderlessButton onPress={handleShareInvitation}>
+              <Fontisto name="share" color={theme.colors.primary} size={24} />
+            </BorderlessButton>
+          )
         }
       />
 
