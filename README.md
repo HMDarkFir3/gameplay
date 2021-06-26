@@ -27,7 +27,8 @@ Um aplicativo de agendamento de partidas de e-sports com seus amigos.
 ---
 
 ## 🎉 Melhorias na Aplicação
-
+    
+    - Adicionado estilo com styled-components;
     - Adicionado mensagens randômicas na tela Home;
     - Adicionado modal com a tela Logout;
     
