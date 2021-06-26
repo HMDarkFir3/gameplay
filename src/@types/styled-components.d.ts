@@ -22,6 +22,8 @@ declare module "styled-components" {
       heading: string;
       line: string;
       on: string;
+
+      discord: string;
     };
   }
 }

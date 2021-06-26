@@ -33,7 +33,7 @@ export default function Guild(props: Props) {
 
   return (
     <Container activeOpacity={0.7} {...rest}>
-      <GuildIcon />
+      <GuildIcon guildId={data.id} iconId={data.icon} />
 
       <Content>
         <View>
