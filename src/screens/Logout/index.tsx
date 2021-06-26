@@ -1,5 +1,9 @@
 //React
 import React from "react";
+import { Alert } from "react-native";
+
+//Components
+import SmallButton from "../../components/SmallButton";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -26,6 +30,8 @@ export default function Logout(props: Props) {
 
   const { theme } = useTheme();
 
+  function signOut() {}
+
   return (
     <Container>
       <Content>
@@ -35,23 +41,18 @@ export default function Logout(props: Props) {
       </Content>
 
       <ButtonArea>
-        <Button
-          onPress={() => closeModal()}
-          activeOpacity={0.7}
+        <SmallButton
+          title="Não"
           color={theme.colors.secondary100}
           hasBorder={true}
-        >
-          <Label>Não</Label>
-        </Button>
-
-        <Button
-          onPress={() => alert("sim")}
-          activeOpacity={0.7}
+          onPress={closeModal}
+        />
+        <SmallButton
+          title="Sim"
           color={theme.colors.primary}
           hasBorder={false}
-        >
-          <Label>Sim</Label>
-        </Button>
+          onPress={signOut}
+        />
       </ButtonArea>
     </Container>
   );
