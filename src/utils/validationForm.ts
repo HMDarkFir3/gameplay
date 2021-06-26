@@ -43,10 +43,9 @@ export function validationForm(
   if (day === "") {
     Alert.alert("Campo dia em branco.");
     return;
-  }
 
-  //Validando dia menor que o atual e mês menor que o atual
-  if (parseInt(day) < validatedDay && parseInt(month) < validatedMonth) {
+    //Validando dia menor que o atual
+  } else if (parseInt(day) < validatedDay) {
     Alert.alert("Digite um dia válido.");
     return;
 
