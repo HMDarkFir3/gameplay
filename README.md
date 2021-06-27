@@ -88,8 +88,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/install/)
 - [axios](https://github.com/axios/axios)
 - [styled-components](https://styled-components.com)
+- [date-fns](https://date-fns.org)
 - [react-native-svg](https://github.com/react-native-svg/react-native-svg)
 - [react-native-uuid](https://www.npmjs.com/package/react-native-uuid)
+- [react-native-masked-text](https://github.com/benhurott/react-native-masked-text)
+- [react-native-iphone-x-helper](https://github.com/ptelad/react-native-iphone-x-helper)
 - [expo-auth-session](https://docs.expo.io/versions/latest/sdk/auth-session/)
 - [expo-random](https://docs.expo.io/versions/latest/sdk/random/)
 - [expo-font](https://docs.expo.io/versions/latest/sdk/font/)
@@ -97,7 +100,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [expo-app-loading](https://docs.expo.io/versions/latest/sdk/app-loading/)
 - [expo-linear-gradient](https://docs.expo.io/versions/latest/sdk/linear-gradient/)
 - [expo-linking](https://docs.expo.io/versions/latest/sdk/linking/)
-- [react-native-iphone-x-helper](https://github.com/ptelad/react-native-iphone-x-helper)
 
 ---
 
