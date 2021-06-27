@@ -1,6 +1,6 @@
 //React
 import React, { useState } from "react";
-import { StatusBar, View, ScrollView, Platform, Alert } from "react-native";
+import { StatusBar, View, ScrollView, Platform } from "react-native";
 
 //React Navigation
 import { useNavigation } from "@react-navigation/native";
@@ -15,7 +15,7 @@ import { RectButton } from "react-native-gesture-handler";
 import uuid from "react-native-uuid";
 
 //date-fns
-import { getDay } from "date-fns";
+import { format } from "date-fns";
 
 //Hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -93,9 +93,6 @@ export default function AppointmentCreate() {
   }
 
   async function handleSubmit() {
-    const today = new Date();
-    const dia = String(today.getDate()).padStart(2, "0");
-
     const done = validationForm(
       category,
       guild.name,
@@ -113,7 +110,9 @@ export default function AppointmentCreate() {
         category,
         date: `${day.length === 1 ? "0" + day : day}/${
           month.length === 1 ? "0" + month : month
-        } às ${hour}:${minute}h`,
+        } às ${hour.length === 1 ? "0" + hour : hour}:${
+          minute.length === 1 ? "0" + minute : minute
+        }h`,
         description: description,
       };
 
