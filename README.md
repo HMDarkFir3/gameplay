@@ -7,9 +7,11 @@
 </h1>
 
 <p align="center" >
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/hmdarkfir3/nlw-together-gameplay?style=for-the-badge">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/hmdarkfir3/nlw-together-react-native
+?style=for-the-badge">
   
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hmdarkfir3/nlw-together-gameplay?style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hmdarkfir3/nlw-together-react-native
+?style=for-the-badge">
   
   <img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge" />
 </p>
@@ -43,10 +45,11 @@ Para clonar e executar este aplicativo, você precisará de [Git](https://git-sc
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/HMDarkFir3/NLW-Together_GamePlay.git
+$ git clone https://github.com/HMDarkFir3/nlw-together-react-native
+.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd NLW-Together_GamePlay
+$ cd nlw-together-react-native
 ```
 
 ### 🎲 Rodando a Aplicação
