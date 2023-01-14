@@ -22,7 +22,7 @@ An app for scheduling esports matches with your friends.
 
 ---
 
-## 🎉 Millestone
+## 🎉 Improvements
     
     - Added styling with styled-components;
     - Added Light Theme;
