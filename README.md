@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  🚀 Concluído 🚀
+  🚀 Done 🚀
 </h1>
 
 <p align="center" >
@@ -16,13 +16,13 @@
   
 ---
 
-## 📋 Sobre
+## 📋 About
 
-Um aplicativo de agendamento de partidas de e-sports com seus amigos.
+An app for scheduling esports matches with your friends.
 
 ---
 
-## 🎉 Melhorias na Aplicação
+## 🎉 Millestone
     
     - Adicionado estilo com styled-components;
     - Adicionado Tema Claro;
@@ -35,47 +35,55 @@ Um aplicativo de agendamento de partidas de e-sports com seus amigos.
     
 ---
 
-## 📂 Como rodar este projeto
+## 📂 How to run this project
 
-Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com), [NodeJs](https://nodejs.org/en/) e [Android Studio](https://developer.android.com/studio) Instalado em seu computador.
+To clone and run this app, you will need to [Git](https://git-scm.com), [NodeJs](https://nodejs.org/en/) and [Android Studio](https://developer.android.com/studio) installed on your computer or a mobile device with android or ios with the [ExpoGo](https://expo.dev/client) app installed.
 
-### 🌀 Clonando o repositório
+### 🌀 Cloning the repository
 
 ```bash
-# Clone este repositório
+# Clone this repository
 $ git clone https://github.com/HMDarkFir3/gameplay.git
 
-# Acesse a pasta do projeto no terminal/cmd
+# Access the project folder in the terminal/cmd
 $ cd gameplay
 ```
 
-### 🎲 Rodando a Aplicação
+### 🎲 Running the Application
 
 ```bash
-# Instale as dependências
-$ yarn install
+# Install dependencies
+$ yarn install ou npm install
 
-# Execute a Aplicação em Desenvolvimento
-$ expo start
+# Run the Application in Development
+
+# If you are using your cellphone how emulator, run
+$ npx expo start
+
+# If you are using the Android emulator, run
+$ yarn android ou npm run android
+
+# If you are using the IOS emulator, run
+yarn ios ou npm run ios
 ```
 
-### 📁 Configuração .ENV
+### 📁 .ENV Configuration 
 
 ```bash
-#adicionado .env.example no projeto, lembrar de adicionar as variáveis de ambiente conforme o exemplo
+# added .env.example in the project, remember to add the environment variables as per the example
 
-REDIRECT_URI=
-SCOPE=
-RESPONSE_TYPE=
+# Google Credentials
 CLIENT_ID=
-CDN_IMAGE=
+REDIRECT_URI=
+RESPONSE_TYPE=
+SCOPE=
 ```
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
+The project was developed using the following technologies:
 
 - [React Native](https://reactnative.dev)
 - [Expo](https://docs.expo.io)
@@ -87,17 +95,17 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ---
 
-## 💪 Como contribuir para o projeto
+## 💪 How to contribute to the project
 
-1. Faça um **fork** do projeto.
-2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
-3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
-4. Envie as suas alterações: `git push origin my-feature`
-   > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
+1. Make a **fork** of the project.
+2. Create a new branch with your changes: `git checkout -b my-feature`
+3. Save the changes and create a commit message telling you what you've done: `git commit -m "feature: My new feature"`
+4. Submit your changes: `git push origin my-feature`
+   > If you have any questions check out this [guide on how to contribute to GitHub](https://github.com/firstcontributions/first-contributions)
 
 ---
 
-## 🧑 Autor
+## 🧑 Author
 
 <img style="border-radius: 50%;" src="https://github.com/HMDarkFir3.png" width="150px;" alt=""/>
  <h4>Henrique Luís Oliveira Marques</h4>
@@ -108,8 +116,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ---
 
-## 📝 Licença
+## 📝 License
 
-Este projeto esta sobe a licença MIT. Veja a [LICENÇA](./LICENSE) para saber mais.
+This project is under the MIT license. See the [LICENSE](./LICENSE) to learn more.
 <br>
-👋🏽 [Entre em contato!](https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)
+👋🏽 [Get in touch!](https://www.linkedin.com/in/henrique-luís-oliveira-marques-3406361a7/)
