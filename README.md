@@ -72,11 +72,11 @@ yarn ios ou npm run ios
 ```bash
 # added .env.example in the project, remember to add the environment variables as per the example
 
-# Google Credentials
-CLIENT_ID=
 REDIRECT_URI=
-RESPONSE_TYPE=
 SCOPE=
+RESPONSE_TYPE=
+CLIENT_ID=
+CDN_IMAGE=
 ```
 
 ---
