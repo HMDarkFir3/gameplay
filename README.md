@@ -24,20 +24,20 @@ An app for scheduling esports matches with your friends.
 
 ## 🎉 Millestone
     
-    - Adicionado estilo com styled-components;
-    - Adicionado Tema Claro;
-    - Adicionado storage do tema no AsyncStorage;
-    - Adicionado mensagens randômicas na tela Home;
-    - Adicionado modal com a tela Logout;
-    - Adicionado validação para campos vazios no formulário;
-    - Adicionado validação para data e hora;
-    - Adicionado máscara de digitação de somente números para o componente SmallInput;
+    - Added styling with styled-components;
+    - Added Light Theme;
+    - Added theme in storage with AsyncStorage;
+    - Added random messages on Home screen;
+    - Added modal with Logout screen;
+    - Added validation for empty fields in the form;
+    - Added validation for date and time;
+    - Added numbers-only typing mask for SmallInput component;
     
 ---
 
 ## 📂 How to run this project
 
-To clone and run this app, you will need to [Git](https://git-scm.com), [NodeJs](https://nodejs.org/en/) and [Android Studio](https://developer.android.com/studio) installed on your computer or a mobile device with android or ios with the [ExpoGo](https://expo.dev/client) app installed.
+To clone and run this app, you will need to [Git](https://git-scm.com), [NodeJs](https://nodejs.org/en/) and [Android Studio](https://developer.android.com/studio) installed on your computer or a mobile device with android or ios with the [Expo Go](https://expo.dev/client) app installed.
 
 ### 🌀 Cloning the repository
 
